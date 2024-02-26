@@ -1,0 +1,434 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E416EB072B8CC2F0006D7073 /* GPTxcstringTranslateApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E416EB062B8CC2F0006D7073 /* GPTxcstringTranslateApp.swift */; };
+		E416EB092B8CC2F0006D7073 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E416EB082B8CC2F0006D7073 /* ContentView.swift */; };
+		E416EB0B2B8CC2F3006D7073 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E416EB0A2B8CC2F3006D7073 /* Assets.xcassets */; };
+		E416EB0E2B8CC2F3006D7073 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E416EB0D2B8CC2F3006D7073 /* Preview Assets.xcassets */; };
+		E416EB162B8CC34E006D7073 /* SettingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E416EB152B8CC34E006D7073 /* SettingService.swift */; };
+		E416EB192B8CC470006D7073 /* ObservableUserDefault in Frameworks */ = {isa = PBXBuildFile; productRef = E416EB182B8CC470006D7073 /* ObservableUserDefault */; };
+		E416EB1B2B8CC470006D7073 /* ObservableUserDefaultClient in Frameworks */ = {isa = PBXBuildFile; productRef = E416EB1A2B8CC470006D7073 /* ObservableUserDefaultClient */; };
+		E416EB1D2B8CC51C006D7073 /* GPTService .swift in Sources */ = {isa = PBXBuildFile; fileRef = E416EB1C2B8CC51C006D7073 /* GPTService .swift */; };
+		E416EB1F2B8CC76E006D7073 /* GPTProcessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E416EB1E2B8CC76E006D7073 /* GPTProcessView.swift */; };
+		E416EB232B8CC86A006D7073 /* XCStringModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E416EB222B8CC86A006D7073 /* XCStringModel.swift */; };
+		E416EB272B8CCC1B006D7073 /* dev-xcstrings.json in Resources */ = {isa = PBXBuildFile; fileRef = E416EB262B8CCC1B006D7073 /* dev-xcstrings.json */; };
+		E416EB2B2B8CDF7F006D7073 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E416EB2A2B8CDF7F006D7073 /* SettingView.swift */; };
+		E416EB2F2B8CE659006D7073 /* CodableWrapper in Frameworks */ = {isa = PBXBuildFile; productRef = E416EB2E2B8CE659006D7073 /* CodableWrapper */; };
+		E416EB312B8CEC4A006D7073 /* StringEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E416EB302B8CEC4A006D7073 /* StringEditView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		E416EB032B8CC2F0006D7073 /* XCStringGPTTranslate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XCStringGPTTranslate.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E416EB062B8CC2F0006D7073 /* GPTxcstringTranslateApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPTxcstringTranslateApp.swift; sourceTree = "<group>"; };
+		E416EB082B8CC2F0006D7073 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		E416EB0A2B8CC2F3006D7073 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E416EB0D2B8CC2F3006D7073 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		E416EB0F2B8CC2F3006D7073 /* XCStringGPTTranslate.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = XCStringGPTTranslate.entitlements; sourceTree = "<group>"; };
+		E416EB152B8CC34E006D7073 /* SettingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingService.swift; sourceTree = "<group>"; };
+		E416EB1C2B8CC51C006D7073 /* GPTService .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GPTService .swift"; sourceTree = "<group>"; };
+		E416EB1E2B8CC76E006D7073 /* GPTProcessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPTProcessView.swift; sourceTree = "<group>"; };
+		E416EB222B8CC86A006D7073 /* XCStringModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCStringModel.swift; sourceTree = "<group>"; };
+		E416EB262B8CCC1B006D7073 /* dev-xcstrings.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "dev-xcstrings.json"; sourceTree = "<group>"; };
+		E416EB2A2B8CDF7F006D7073 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		E416EB2C2B8CE1AC006D7073 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		E416EB302B8CEC4A006D7073 /* StringEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringEditView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E416EB002B8CC2F0006D7073 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E416EB2F2B8CE659006D7073 /* CodableWrapper in Frameworks */,
+				E416EB192B8CC470006D7073 /* ObservableUserDefault in Frameworks */,
+				E416EB1B2B8CC470006D7073 /* ObservableUserDefaultClient in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E416EAFA2B8CC2F0006D7073 = {
+			isa = PBXGroup;
+			children = (
+				E416EB052B8CC2F0006D7073 /* XCStringGPTTranslate */,
+				E416EB042B8CC2F0006D7073 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E416EB042B8CC2F0006D7073 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E416EB032B8CC2F0006D7073 /* XCStringGPTTranslate.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E416EB052B8CC2F0006D7073 /* XCStringGPTTranslate */ = {
+			isa = PBXGroup;
+			children = (
+				E416EB2C2B8CE1AC006D7073 /* Info.plist */,
+				E416EB062B8CC2F0006D7073 /* GPTxcstringTranslateApp.swift */,
+				E416EB082B8CC2F0006D7073 /* ContentView.swift */,
+				E416EB1E2B8CC76E006D7073 /* GPTProcessView.swift */,
+				E416EB152B8CC34E006D7073 /* SettingService.swift */,
+				E416EB1C2B8CC51C006D7073 /* GPTService .swift */,
+				E416EB222B8CC86A006D7073 /* XCStringModel.swift */,
+				E416EB2A2B8CDF7F006D7073 /* SettingView.swift */,
+				E416EB302B8CEC4A006D7073 /* StringEditView.swift */,
+				E416EB0A2B8CC2F3006D7073 /* Assets.xcassets */,
+				E416EB0F2B8CC2F3006D7073 /* XCStringGPTTranslate.entitlements */,
+				E416EB0C2B8CC2F3006D7073 /* Preview Content */,
+			);
+			path = XCStringGPTTranslate;
+			sourceTree = "<group>";
+		};
+		E416EB0C2B8CC2F3006D7073 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				E416EB262B8CCC1B006D7073 /* dev-xcstrings.json */,
+				E416EB0D2B8CC2F3006D7073 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E416EB022B8CC2F0006D7073 /* XCStringGPTTranslate */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E416EB122B8CC2F3006D7073 /* Build configuration list for PBXNativeTarget "XCStringGPTTranslate" */;
+			buildPhases = (
+				E416EAFF2B8CC2F0006D7073 /* Sources */,
+				E416EB002B8CC2F0006D7073 /* Frameworks */,
+				E416EB012B8CC2F0006D7073 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = XCStringGPTTranslate;
+			packageProductDependencies = (
+				E416EB182B8CC470006D7073 /* ObservableUserDefault */,
+				E416EB1A2B8CC470006D7073 /* ObservableUserDefaultClient */,
+				E416EB2E2B8CE659006D7073 /* CodableWrapper */,
+			);
+			productName = GPTxcstringTranslate;
+			productReference = E416EB032B8CC2F0006D7073 /* XCStringGPTTranslate.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E416EAFB2B8CC2F0006D7073 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1520;
+				LastUpgradeCheck = 1520;
+				TargetAttributes = {
+					E416EB022B8CC2F0006D7073 = {
+						CreatedOnToolsVersion = 15.2;
+					};
+				};
+			};
+			buildConfigurationList = E416EAFE2B8CC2F0006D7073 /* Build configuration list for PBXProject "XCStringGPTTranslate" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E416EAFA2B8CC2F0006D7073;
+			packageReferences = (
+				E416EB172B8CC470006D7073 /* XCRemoteSwiftPackageReference "ObservableUserDefault" */,
+				E416EB2D2B8CE659006D7073 /* XCRemoteSwiftPackageReference "CodableWrapper" */,
+			);
+			productRefGroup = E416EB042B8CC2F0006D7073 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E416EB022B8CC2F0006D7073 /* XCStringGPTTranslate */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E416EB012B8CC2F0006D7073 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E416EB0E2B8CC2F3006D7073 /* Preview Assets.xcassets in Resources */,
+				E416EB0B2B8CC2F3006D7073 /* Assets.xcassets in Resources */,
+				E416EB272B8CCC1B006D7073 /* dev-xcstrings.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E416EAFF2B8CC2F0006D7073 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E416EB162B8CC34E006D7073 /* SettingService.swift in Sources */,
+				E416EB092B8CC2F0006D7073 /* ContentView.swift in Sources */,
+				E416EB1F2B8CC76E006D7073 /* GPTProcessView.swift in Sources */,
+				E416EB2B2B8CDF7F006D7073 /* SettingView.swift in Sources */,
+				E416EB232B8CC86A006D7073 /* XCStringModel.swift in Sources */,
+				E416EB072B8CC2F0006D7073 /* GPTxcstringTranslateApp.swift in Sources */,
+				E416EB1D2B8CC51C006D7073 /* GPTService .swift in Sources */,
+				E416EB312B8CEC4A006D7073 /* StringEditView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		E416EB102B8CC2F3006D7073 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E416EB112B8CC2F3006D7073 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		E416EB132B8CC2F3006D7073 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"$(SRCROOT)/XCStringGPTTranslate/Preview Content\"";
+				DEVELOPMENT_TEAM = Y457P5Q8XM;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = XCStringGPTTranslate/Info.plist;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wp.XCStringGPTTranslate;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		E416EB142B8CC2F3006D7073 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"$(SRCROOT)/XCStringGPTTranslate/Preview Content\"";
+				DEVELOPMENT_TEAM = Y457P5Q8XM;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = XCStringGPTTranslate/Info.plist;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wp.XCStringGPTTranslate;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E416EAFE2B8CC2F0006D7073 /* Build configuration list for PBXProject "XCStringGPTTranslate" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E416EB102B8CC2F3006D7073 /* Debug */,
+				E416EB112B8CC2F3006D7073 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E416EB122B8CC2F3006D7073 /* Build configuration list for PBXNativeTarget "XCStringGPTTranslate" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E416EB132B8CC2F3006D7073 /* Debug */,
+				E416EB142B8CC2F3006D7073 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E416EB172B8CC470006D7073 /* XCRemoteSwiftPackageReference "ObservableUserDefault" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/davidsteppenbeck/ObservableUserDefault.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.2.0;
+			};
+		};
+		E416EB2D2B8CE659006D7073 /* XCRemoteSwiftPackageReference "CodableWrapper" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/winddpan/CodableWrapper.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E416EB182B8CC470006D7073 /* ObservableUserDefault */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E416EB172B8CC470006D7073 /* XCRemoteSwiftPackageReference "ObservableUserDefault" */;
+			productName = ObservableUserDefault;
+		};
+		E416EB1A2B8CC470006D7073 /* ObservableUserDefaultClient */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E416EB172B8CC470006D7073 /* XCRemoteSwiftPackageReference "ObservableUserDefault" */;
+			productName = ObservableUserDefaultClient;
+		};
+		E416EB2E2B8CE659006D7073 /* CodableWrapper */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E416EB2D2B8CE659006D7073 /* XCRemoteSwiftPackageReference "CodableWrapper" */;
+			productName = CodableWrapper;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = E416EAFB2B8CC2F0006D7073 /* Project object */;
+}
