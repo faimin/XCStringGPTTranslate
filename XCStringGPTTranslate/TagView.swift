@@ -17,7 +17,7 @@ struct TagView: View {
 
     var body: some View {
         HStack(spacing: 0) {
-            Text(title)
+            Text(title).padding(.trailing, 8)
             Spacer()
         }
         .background(Color.gray.opacity(0.001))

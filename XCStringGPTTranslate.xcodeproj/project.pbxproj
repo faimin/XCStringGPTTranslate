@@ -26,6 +26,9 @@
 		F7D6C1C72B8DA9DE0094DB9D /* URLRequest+curl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D6C1C62B8DA9DE0094DB9D /* URLRequest+curl.swift */; };
 		F7D6C1CB2B8DBF480094DB9D /* AppStorage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D6C1CA2B8DBF480094DB9D /* AppStorage+.swift */; };
 		F7D6C1CD2B8DC0880094DB9D /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D6C1CC2B8DC0880094DB9D /* TagView.swift */; };
+		F7D6C1CF2B8DDB3D0094DB9D /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F7D6C1CE2B8DDB3D0094DB9D /* Localizable.xcstrings */; };
+		F7D6C1D22B8DDC3B0094DB9D /* XcodeProj in Frameworks */ = {isa = PBXBuildFile; productRef = F7D6C1D12B8DDC3B0094DB9D /* XcodeProj */; };
+		F7D6C1D52B8DDE710094DB9D /* GPTServiceOpenButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D6C1D42B8DDE710094DB9D /* GPTServiceOpenButtonView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +50,8 @@
 		F7D6C1C62B8DA9DE0094DB9D /* URLRequest+curl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLRequest+curl.swift"; sourceTree = "<group>"; };
 		F7D6C1CA2B8DBF480094DB9D /* AppStorage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppStorage+.swift"; sourceTree = "<group>"; };
 		F7D6C1CC2B8DC0880094DB9D /* TagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagView.swift; sourceTree = "<group>"; };
+		F7D6C1CE2B8DDB3D0094DB9D /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		F7D6C1D42B8DDE710094DB9D /* GPTServiceOpenButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPTServiceOpenButtonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +63,7 @@
 				E416EB192B8CC470006D7073 /* ObservableUserDefault in Frameworks */,
 				F7D6C1C12B8D87AA0094DB9D /* EventSource in Frameworks */,
 				E416EB1B2B8CC470006D7073 /* ObservableUserDefaultClient in Frameworks */,
+				F7D6C1D22B8DDC3B0094DB9D /* XcodeProj in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,10 +100,12 @@
 				E416EB222B8CC86A006D7073 /* XCStringModel.swift */,
 				E416EB2A2B8CDF7F006D7073 /* SettingView.swift */,
 				E416EB302B8CEC4A006D7073 /* StringEditView.swift */,
+				F7D6C1D42B8DDE710094DB9D /* GPTServiceOpenButtonView.swift */,
+				F7D6C1CC2B8DC0880094DB9D /* TagView.swift */,
 				E416EB0A2B8CC2F3006D7073 /* Assets.xcassets */,
+				F7D6C1CE2B8DDB3D0094DB9D /* Localizable.xcstrings */,
 				E416EB0F2B8CC2F3006D7073 /* XCStringGPTTranslate.entitlements */,
 				E416EB0C2B8CC2F3006D7073 /* Preview Content */,
-				F7D6C1CC2B8DC0880094DB9D /* TagView.swift */,
 			);
 			path = XCStringGPTTranslate;
 			sourceTree = "<group>";
@@ -149,6 +157,7 @@
 				E416EB1A2B8CC470006D7073 /* ObservableUserDefaultClient */,
 				E416EB2E2B8CE659006D7073 /* CodableWrapper */,
 				F7D6C1C02B8D87AA0094DB9D /* EventSource */,
+				F7D6C1D12B8DDC3B0094DB9D /* XcodeProj */,
 			);
 			productName = GPTxcstringTranslate;
 			productReference = E416EB032B8CC2F0006D7073 /* XCStringGPTTranslate.app */;
@@ -176,12 +185,22 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
+				"zh-Hant",
+				fr,
+				it,
+				ja,
+				es,
+				"pt-PT",
+				de,
+				ar,
 			);
 			mainGroup = E416EAFA2B8CC2F0006D7073;
 			packageReferences = (
 				E416EB172B8CC470006D7073 /* XCRemoteSwiftPackageReference "ObservableUserDefault" */,
 				E416EB2D2B8CE659006D7073 /* XCRemoteSwiftPackageReference "CodableWrapper" */,
 				F7D6C1BF2B8D87AA0094DB9D /* XCRemoteSwiftPackageReference "EventSource" */,
+				F7D6C1D02B8DDC3B0094DB9D /* XCRemoteSwiftPackageReference "XcodeProj" */,
 			);
 			productRefGroup = E416EB042B8CC2F0006D7073 /* Products */;
 			projectDirPath = "";
@@ -199,6 +218,7 @@
 			files = (
 				E416EB0E2B8CC2F3006D7073 /* Preview Assets.xcassets in Resources */,
 				E416EB0B2B8CC2F3006D7073 /* Assets.xcassets in Resources */,
+				F7D6C1CF2B8DDB3D0094DB9D /* Localizable.xcstrings in Resources */,
 				E416EB272B8CCC1B006D7073 /* dev-xcstrings.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -211,6 +231,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E416EB162B8CC34E006D7073 /* SettingService.swift in Sources */,
+				F7D6C1D52B8DDE710094DB9D /* GPTServiceOpenButtonView.swift in Sources */,
 				E416EB092B8CC2F0006D7073 /* ContentView.swift in Sources */,
 				E416EB1F2B8CC76E006D7073 /* GPTProcessView.swift in Sources */,
 				E416EB2B2B8CDF7F006D7073 /* SettingView.swift in Sources */,
@@ -351,7 +372,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_ENTITLEMENTS = XCStringGPTTranslate/XCStringGPTTranslate.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -362,6 +383,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = XCStringGPTTranslate/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -381,7 +403,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_ENTITLEMENTS = XCStringGPTTranslate/XCStringGPTTranslate.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -392,6 +414,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = XCStringGPTTranslate/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -454,6 +477,14 @@
 				minimumVersion = 0.0.7;
 			};
 		};
+		F7D6C1D02B8DDC3B0094DB9D /* XCRemoteSwiftPackageReference "XcodeProj" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/tuist/XcodeProj.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.19.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -476,6 +507,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F7D6C1BF2B8D87AA0094DB9D /* XCRemoteSwiftPackageReference "EventSource" */;
 			productName = EventSource;
+		};
+		F7D6C1D12B8DDC3B0094DB9D /* XcodeProj */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F7D6C1D02B8DDC3B0094DB9D /* XCRemoteSwiftPackageReference "XcodeProj" */;
+			productName = XcodeProj;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

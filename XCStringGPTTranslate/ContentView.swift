@@ -8,25 +8,25 @@
 import SwiftUI
 
 struct ContentView: View {
-    @AppStorage("xcstringsPaths")
-    private var xcstringsPaths: [String] = []
+    @AppStorage("targets")
+    private var targets: [GPTServiceTarget?] = []
 
-    @State var gptServices: [GPTService?] = [] {
+    @State private var gptServices: [GPTService?] = [] {
         didSet {
-            xcstringsPaths = gptServices.map { $0?.fileUrl.absoluteString ?? "" }
+            targets = gptServices.map { $0?.target }
         }
     }
 
-    @State var showSetting = false
-    @State var selectedIndex: Int = 0
+    @State private var showSetting = false
+    @State private var selectedIndex: Int = 0
 
     var body: some View {
         _body
             .onAppear(perform: {
-                if xcstringsPaths.count != gptServices.count {
-                    gptServices = xcstringsPaths.map { path in
-                        if let url = URL(string: path) {
-                            return try? GPTService(fileUrl: url)
+                if targets.count != gptServices.count {
+                    gptServices = targets.map { target in
+                        if let target {
+                            return try? GPTService(target: target)
                         }
                         return nil
                     }
@@ -44,7 +44,7 @@ struct ContentView: View {
                     let service = gptServices[index]
 
                     let title: String = {
-                        if let text = service?.fileUrl.absoluteString.replacingOccurrences(of: "file://", with: "") {
+                        if let text = service?.target.xcstringURL.absoluteString.replacingOccurrences(of: "file://", with: "") {
                             var comps = text.components(separatedBy: "/")
                             comps.removeLast()
                             return comps.joined(separator: "/")
@@ -66,7 +66,6 @@ struct ContentView: View {
                 }
 
                 Button("+") {
-                    xcstringsPaths.append("")
                     gptServices.append(nil)
                     selectedIndex = gptServices.count - 1
                 }
@@ -90,24 +89,17 @@ struct ContentView: View {
             if gptServices.count > selectedIndex {
                 if let service = gptServices[selectedIndex] {
                     GPTProcessView(gptService: service)
-                        .id(service.fileUrl.hashValue)
+                        .id(service.target.xcstringURL.hashValue)
                 } else {
                     ZStack {
                         Color.clear
-                        Button("Open .xcstrings") {
-                            let panel = NSOpenPanel()
-                            panel.allowsMultipleSelection = false
-                            panel.canChooseDirectories = false
-                            panel.allowedContentTypes = [.init(importedAs: "xcstrings")]
-                            if panel.runModal() == .OK, let url = panel.url {
-                                do {
-                                    print(url)
-                                    gptServices[selectedIndex] = try GPTService(fileUrl: url)
-                                } catch {
-                                    print(error)
-                                }
+                        GPTServiceOpenButtonView(target: .init(get: {
+                            gptServices[selectedIndex]?.target
+                        }, set: { newValue in
+                            if let newValue {
+                                gptServices[selectedIndex] = try? GPTService(target: newValue)
                             }
-                        }
+                        }))
                     }
                 }
             } else {

@@ -15,9 +15,11 @@ struct SettingView: View {
         NavigationStack {
             VStack {
                 HStack {
-                    Text("GPT host")
+                    Text("OpenAI host")
                         .frame(width: 80, alignment: .trailing)
-                    TextField("GPT host", text: $service.gptServer)
+
+                    let defaultUrl = "https://api.openai.com"
+                    TextField(defaultUrl, text: $service.gptServer)
                 }
                 HStack {
                     Text("GPT API Key")

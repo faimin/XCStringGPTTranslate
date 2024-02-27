@@ -7,16 +7,25 @@
 
 import EventSource
 import Foundation
+import PathKit
+import SwiftUI
+import XcodeProj
 
 struct ProcessMessage {
-    var message: String
+    var message: LocalizedStringKey
     var success: Bool
+}
+
+struct GPTServiceTarget: Codable {
+    let xcstringURL: URL
+    let xcprojURL: URL
 }
 
 @Observable
 class GPTService {
     @ObservationIgnored
-    let fileUrl: URL
+    let target: GPTServiceTarget
+
     var model: XCStringModel {
         didSet {
             wirteJSONBack()
@@ -46,8 +55,8 @@ class GPTService {
     @ObservationIgnored
     private var writeDebouncer: Timer?
 
-    init(fileUrl: URL) throws {
-        self.fileUrl = fileUrl
+    init(target: GPTServiceTarget) throws {
+        self.target = target
         model = .init(sourceLanguage: "en", version: "1.0")
         baseLang = ""
         langs = []
@@ -55,7 +64,8 @@ class GPTService {
     }
 
     func reload() throws {
-        let model = try JSONDecoder().decode(XCStringModel.self, from: Data(contentsOf: fileUrl))
+        let model = try JSONDecoder().decode(XCStringModel.self, from: Data(contentsOf:
+            target.xcstringURL))
         var langs: [String] = []
         model.strings.forEach { _, val in
             let _langs = val.localizations.map(\.key)
@@ -63,6 +73,10 @@ class GPTService {
                 langs = _langs
             }
         }
+
+        let xcodeproj = try XcodeProj(path: Path(target.xcprojURL.path()))
+        langs = Set(langs).union(xcodeproj.pbxproj.rootObject?.knownRegions ?? []).sorted()
+        langs.removeAll(where: { $0 == "Base" })
 
         self.model = model
         self.langs = langs.sorted()
@@ -80,7 +94,7 @@ class GPTService {
                 let encoder = JSONEncoder()
                 encoder.outputFormatting = [.sortedKeys, .prettyPrinted, .withoutEscapingSlashes]
                 let data = try encoder.encode(self.model)
-                try data.write(to: self.fileUrl)
+                try data.write(to: self.target.xcstringURL)
             } catch {
                 print(error)
             }
@@ -106,14 +120,14 @@ class GPTService {
 
         Task { @MainActor in
             for key in self.model.strings.map(\.key) {
-                processMessage = .init(message: "🟡\(key)🟡: start", success: true)
+                processMessage = .init(message: "🟡\(key)🟡: Start", success: true)
                 do {
                     try await self.request(key)
                 } catch {
                     processMessage = .init(message: "🔴\(key)🔴: \(error.localizedDescription)", success: false)
                 }
             }
-            processMessage = .init(message: "🟢all finished", success: true)
+            processMessage = .init(message: "🟢All finished", success: true)
             isRunning = false
         }
     }
@@ -124,7 +138,7 @@ class GPTService {
         isRunning = true
 
         Task { @MainActor in
-            processMessage = .init(message: "🟡\(key)🟡: start", success: true)
+            processMessage = .init(message: "🟡\(key)🟡: Start", success: true)
             do {
                 try await self.request(key)
             } catch {
@@ -132,6 +146,10 @@ class GPTService {
             }
             isRunning = false
         }
+    }
+
+    func removeKey(_ key: String) {
+        model.strings.removeValue(forKey: key)
     }
 
     func removeAllTranslated(_ key: String) {
@@ -159,7 +177,8 @@ private extension GPTService {
             baseText = _baseText.stringUnit.value
         } else if baseLang == model.sourceLanguage {
             baseText = key
-        } else {
+        }
+        if baseText?.nilIfEmpty == nil {
             throw "empty string in \"\(baseLang)\" for Key: \"\(key)\""
         }
         var jsonDict: [String: String] = [:]
@@ -202,8 +221,10 @@ private extension GPTService {
         }
         let jsonString = String(text[range]).replacingOccurrences(of: "\\\"", with: "\"").replacingOccurrences(of: "\\n", with: "")
         print(jsonString)
-        let dict = try JSONSerialization.jsonObject(with: jsonString.data(using: .utf8)!) as! [String: String]
-
+        var dict = try JSONSerialization.jsonObject(with: jsonString.data(using: .utf8)!) as! [String: String]
+        if dict["en"]?.nilIfEmpty == nil {
+            dict["en"] = dict["raw"]
+        }
         var translated: [String] = []
         dict.sorted(by: { $0.key < $1.key })
             .filter { langs.contains($0.key) }
@@ -230,7 +251,7 @@ private extension GPTService {
                                    "stream": true,
                                    "messages": messages]
 
-        var server = setting.gptServer.isEmpty ? "https://api.openai.com" : setting.gptServer
+        var server = setting.gptServer.nilIfEmpty ?? "https://api.openai.com"
         if !server.hasPrefix("http") {
             server = "https://\(server)"
         }
