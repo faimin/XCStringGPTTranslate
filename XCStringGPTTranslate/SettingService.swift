@@ -12,11 +12,24 @@ import ObservableUserDefault
 class SettingService {
     static let shared = SettingService()
 
-    @ObservableUserDefault(.init(key: "gpt-key", defaultValue: "", store: .standard))
+    @ObservableUserDefault(.init(key: "gpt-apikey", defaultValue: "", store: .standard))
     @ObservationIgnored
-    var gptKey: String
+    var gptAPIKey: String
 
     @ObservableUserDefault(.init(key: "gpt-server", defaultValue: "", store: .standard))
     @ObservationIgnored
     var gptServer: String
+
+    @ObservableUserDefault(.init(key: "gpt-model", defaultValue: "", store: .standard))
+    @ObservationIgnored
+    var model: String
+
+    @ObservationIgnored
+    var modelList: [String] = ["gpt-3.5-turbo", "gpt-4-turbo-preview"]
+
+    init() {
+        if model.isEmpty {
+            model = modelList[0]
+        }
+    }
 }

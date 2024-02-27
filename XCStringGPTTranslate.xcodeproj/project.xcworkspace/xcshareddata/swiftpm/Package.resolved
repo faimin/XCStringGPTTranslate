@@ -10,6 +10,15 @@
       }
     },
     {
+      "identity" : "eventsource",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Recouse/EventSource.git",
+      "state" : {
+        "revision" : "ffaa978620b19c891d107941c1b36d18836e8ecb",
+        "version" : "0.0.7"
+      }
+    },
+    {
       "identity" : "observableuserdefault",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/davidsteppenbeck/ObservableUserDefault.git",

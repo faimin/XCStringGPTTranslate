@@ -21,6 +21,11 @@
 		E416EB2B2B8CDF7F006D7073 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E416EB2A2B8CDF7F006D7073 /* SettingView.swift */; };
 		E416EB2F2B8CE659006D7073 /* CodableWrapper in Frameworks */ = {isa = PBXBuildFile; productRef = E416EB2E2B8CE659006D7073 /* CodableWrapper */; };
 		E416EB312B8CEC4A006D7073 /* StringEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E416EB302B8CEC4A006D7073 /* StringEditView.swift */; };
+		F7D6C1C12B8D87AA0094DB9D /* EventSource in Frameworks */ = {isa = PBXBuildFile; productRef = F7D6C1C02B8D87AA0094DB9D /* EventSource */; };
+		F7D6C1C52B8D88E40094DB9D /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D6C1C42B8D88E40094DB9D /* String+.swift */; };
+		F7D6C1C72B8DA9DE0094DB9D /* URLRequest+curl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D6C1C62B8DA9DE0094DB9D /* URLRequest+curl.swift */; };
+		F7D6C1CB2B8DBF480094DB9D /* AppStorage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D6C1CA2B8DBF480094DB9D /* AppStorage+.swift */; };
+		F7D6C1CD2B8DC0880094DB9D /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D6C1CC2B8DC0880094DB9D /* TagView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +43,10 @@
 		E416EB2A2B8CDF7F006D7073 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		E416EB2C2B8CE1AC006D7073 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		E416EB302B8CEC4A006D7073 /* StringEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringEditView.swift; sourceTree = "<group>"; };
+		F7D6C1C42B8D88E40094DB9D /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
+		F7D6C1C62B8DA9DE0094DB9D /* URLRequest+curl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLRequest+curl.swift"; sourceTree = "<group>"; };
+		F7D6C1CA2B8DBF480094DB9D /* AppStorage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppStorage+.swift"; sourceTree = "<group>"; };
+		F7D6C1CC2B8DC0880094DB9D /* TagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +56,7 @@
 			files = (
 				E416EB2F2B8CE659006D7073 /* CodableWrapper in Frameworks */,
 				E416EB192B8CC470006D7073 /* ObservableUserDefault in Frameworks */,
+				F7D6C1C12B8D87AA0094DB9D /* EventSource in Frameworks */,
 				E416EB1B2B8CC470006D7073 /* ObservableUserDefaultClient in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -73,6 +83,8 @@
 		E416EB052B8CC2F0006D7073 /* XCStringGPTTranslate */ = {
 			isa = PBXGroup;
 			children = (
+				F7D6C1C32B8D88D40094DB9D /* Utils */,
+				F7D6C1C22B8D88CF0094DB9D /* Service */,
 				E416EB2C2B8CE1AC006D7073 /* Info.plist */,
 				E416EB062B8CC2F0006D7073 /* GPTxcstringTranslateApp.swift */,
 				E416EB082B8CC2F0006D7073 /* ContentView.swift */,
@@ -85,6 +97,7 @@
 				E416EB0A2B8CC2F3006D7073 /* Assets.xcassets */,
 				E416EB0F2B8CC2F3006D7073 /* XCStringGPTTranslate.entitlements */,
 				E416EB0C2B8CC2F3006D7073 /* Preview Content */,
+				F7D6C1CC2B8DC0880094DB9D /* TagView.swift */,
 			);
 			path = XCStringGPTTranslate;
 			sourceTree = "<group>";
@@ -96,6 +109,23 @@
 				E416EB0D2B8CC2F3006D7073 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F7D6C1C22B8D88CF0094DB9D /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		F7D6C1C32B8D88D40094DB9D /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				F7D6C1C42B8D88E40094DB9D /* String+.swift */,
+				F7D6C1C62B8DA9DE0094DB9D /* URLRequest+curl.swift */,
+				F7D6C1CA2B8DBF480094DB9D /* AppStorage+.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -118,6 +148,7 @@
 				E416EB182B8CC470006D7073 /* ObservableUserDefault */,
 				E416EB1A2B8CC470006D7073 /* ObservableUserDefaultClient */,
 				E416EB2E2B8CE659006D7073 /* CodableWrapper */,
+				F7D6C1C02B8D87AA0094DB9D /* EventSource */,
 			);
 			productName = GPTxcstringTranslate;
 			productReference = E416EB032B8CC2F0006D7073 /* XCStringGPTTranslate.app */;
@@ -150,6 +181,7 @@
 			packageReferences = (
 				E416EB172B8CC470006D7073 /* XCRemoteSwiftPackageReference "ObservableUserDefault" */,
 				E416EB2D2B8CE659006D7073 /* XCRemoteSwiftPackageReference "CodableWrapper" */,
+				F7D6C1BF2B8D87AA0094DB9D /* XCRemoteSwiftPackageReference "EventSource" */,
 			);
 			productRefGroup = E416EB042B8CC2F0006D7073 /* Products */;
 			projectDirPath = "";
@@ -183,9 +215,13 @@
 				E416EB1F2B8CC76E006D7073 /* GPTProcessView.swift in Sources */,
 				E416EB2B2B8CDF7F006D7073 /* SettingView.swift in Sources */,
 				E416EB232B8CC86A006D7073 /* XCStringModel.swift in Sources */,
+				F7D6C1C72B8DA9DE0094DB9D /* URLRequest+curl.swift in Sources */,
 				E416EB072B8CC2F0006D7073 /* GPTxcstringTranslateApp.swift in Sources */,
 				E416EB1D2B8CC51C006D7073 /* GPTService .swift in Sources */,
+				F7D6C1CB2B8DBF480094DB9D /* AppStorage+.swift in Sources */,
+				F7D6C1C52B8D88E40094DB9D /* String+.swift in Sources */,
 				E416EB312B8CEC4A006D7073 /* StringEditView.swift in Sources */,
+				F7D6C1CD2B8DC0880094DB9D /* TagView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -410,6 +446,14 @@
 				minimumVersion = 1.0.3;
 			};
 		};
+		F7D6C1BF2B8D87AA0094DB9D /* XCRemoteSwiftPackageReference "EventSource" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Recouse/EventSource.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.7;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -427,6 +471,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E416EB2D2B8CE659006D7073 /* XCRemoteSwiftPackageReference "CodableWrapper" */;
 			productName = CodableWrapper;
+		};
+		F7D6C1C02B8D87AA0094DB9D /* EventSource */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F7D6C1BF2B8D87AA0094DB9D /* XCRemoteSwiftPackageReference "EventSource" */;
+			productName = EventSource;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

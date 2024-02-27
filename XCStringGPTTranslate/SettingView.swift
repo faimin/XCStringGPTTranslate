@@ -13,7 +13,7 @@ struct SettingView: View {
 
     var body: some View {
         NavigationStack {
-            VStack(content: {
+            VStack {
                 HStack {
                     Text("GPT host")
                         .frame(width: 80, alignment: .trailing)
@@ -22,7 +22,17 @@ struct SettingView: View {
                 HStack {
                     Text("GPT API Key")
                         .frame(width: 80, alignment: .trailing)
-                    TextField("GPT API Key", text: $service.gptKey)
+                    TextField("GPT API Key", text: $service.gptAPIKey)
+                }
+
+                HStack {
+                    Text("Model")
+                        .frame(width: 80, alignment: .trailing)
+                    Picker("", selection: $service.model) {
+                        ForEach(service.modelList, id: \.self) { model in
+                            Text(model).tag(model)
+                        }
+                    }
                 }
 
                 Button("Close") {
@@ -30,7 +40,7 @@ struct SettingView: View {
                 }
                 .padding(20)
                 Spacer()
-            })
+            }
             .padding(24)
             .frame(width: 400, height: 300)
             .navigationTitle("Settings")
