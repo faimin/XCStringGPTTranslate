@@ -207,11 +207,12 @@
       }
     },
     "🔴%@🔴: %@" : {
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "🔴%1$@🔴: %2$@"
+            "state" : "translated",
+            "value" : ""
           }
         }
       }
@@ -350,7 +351,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : ""
+            "value" : "قاعدة"
           }
         },
         "de" : {
@@ -421,7 +422,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : ""
+            "value" : "Schließen"
           }
         },
         "en" : {
@@ -433,7 +434,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : ""
+            "value" : "Cerrar"
           }
         },
         "fr" : {
