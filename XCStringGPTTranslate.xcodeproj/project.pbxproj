@@ -90,7 +90,6 @@
 			isa = PBXGroup;
 			children = (
 				F7D6C1C32B8D88D40094DB9D /* Utils */,
-				F7D6C1C22B8D88CF0094DB9D /* Service */,
 				E416EB2C2B8CE1AC006D7073 /* Info.plist */,
 				E416EB062B8CC2F0006D7073 /* GPTxcstringTranslateApp.swift */,
 				E416EB082B8CC2F0006D7073 /* ContentView.swift */,
@@ -117,13 +116,6 @@
 				E416EB0D2B8CC2F3006D7073 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		F7D6C1C22B8D88CF0094DB9D /* Service */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Service;
 			sourceTree = "<group>";
 		};
 		F7D6C1C32B8D88D40094DB9D /* Utils */ = {
