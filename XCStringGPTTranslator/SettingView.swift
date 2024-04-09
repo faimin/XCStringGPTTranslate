@@ -18,15 +18,22 @@ struct SettingView: View {
         NavigationStack {
             VStack(spacing: 30) {
                 VStack(spacing: 0) {
+                    if storeService.isPurchased {
+                        Text("You have completed the purchase, you can use it without any restrictions!")
+                            .font(.caption2)
+                            .foregroundStyle(Color.green)
+                            .padding(.bottom, 20)
+                    }
+
                     HStack {
                         Text("GPT API Key")
                             .frame(width: 80, alignment: .trailing)
-                        TextField("API Key", text: $settingService.gptAPIKey)
+                        SecureField("API Key", text: $settingService.gptAPIKey)
                     }
                     .frame(height: 44)
 
                     HStack {
-                        Text("OpenAI host (Optional)")
+                        Text("OpenAI endpoint (Optional)")
                             .frame(width: 80, alignment: .trailing)
 
                         let defaultUrl = "https://api.openai.com"
@@ -51,14 +58,14 @@ struct SettingView: View {
                     HStack {
                         Button(action: {
                             Task { @MainActor in
-                                self.busy = true
+                                busy = true
                                 do {
                                     try await storeService.restore()
                                 } catch {
                                     print(error)
-                                    self.errorText = error.localizedDescription
+                                    errorText = error.localizedDescription
                                 }
-                                self.busy = false
+                                busy = false
                             }
                         }, label: {
                             Text("Restore")
@@ -66,14 +73,14 @@ struct SettingView: View {
 
                         Button(action: {
                             Task { @MainActor in
-                                self.busy = true
+                                busy = true
                                 do {
                                     try await storeService.purchase()
                                 } catch {
                                     print(error)
-                                    self.errorText = error.localizedDescription
+                                    errorText = error.localizedDescription
                                 }
-                                self.busy = false
+                                busy = false
                             }
                         }, label: {
                             Text("Purchase To Unlock")

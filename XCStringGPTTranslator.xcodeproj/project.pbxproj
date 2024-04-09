@@ -123,6 +123,7 @@
 				E416EB1E2B8CC76E006D7073 /* GPTProcessView.swift */,
 				E416EB152B8CC34E006D7073 /* SettingService.swift */,
 				E416EB1C2B8CC51C006D7073 /* GPTService .swift */,
+				F749D9352BC5453A0031C943 /* StoreService.swift */,
 				E416EB2A2B8CDF7F006D7073 /* SettingView.swift */,
 				E416EB302B8CEC4A006D7073 /* StringEditView.swift */,
 				F7D6C1D42B8DDE710094DB9D /* GPTServiceOpenButtonView.swift */,
@@ -131,7 +132,6 @@
 				F7D6C1CE2B8DDB3D0094DB9D /* Localizable.xcstrings */,
 				E416EB0F2B8CC2F3006D7073 /* XCStringGPTTranslator.entitlements */,
 				E416EB0C2B8CC2F3006D7073 /* Preview Content */,
-				F749D9352BC5453A0031C943 /* StoreService.swift */,
 			);
 			path = XCStringGPTTranslator;
 			sourceTree = "<group>";

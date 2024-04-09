@@ -9,7 +9,7 @@ import Foundation
 import SecureDefaults
 import StoreKit
 
-private struct Const {
+private enum Const {
     static let accessProductId = "gpt_access"
     static let signDateKey = "sign_date"
     static let signSecrect = "t8sLT4Y7stfDHTaSZJWumTtFFAlSHzj1"
@@ -31,7 +31,7 @@ class StoreService {
                 // 更新签名时间
                 if transaction.productID == Const.accessProductId {
                     isPurchased = true
-                    UserDefaults.standard.setValue(Int(Date().timeIntervalSince1970), forKey: Const.signDateKey)
+                    SecureDefaults.shared.setValue(Int(Date().timeIntervalSince1970), forKey: Const.signDateKey)
                 }
             }
         }
@@ -47,9 +47,10 @@ class StoreService {
             defaults.password = Const.signSecrect
         }
         let signDate = defaults.integer(forKey: Const.signDateKey)
+        let nowTimestamp = Int(Date().timeIntervalSince1970)
 
         // 签名维持一周
-        if signDate > 0, signDate + 3600 * 24 * 7 > Int(Date().timeIntervalSince1970) {
+        if signDate > 0, signDate < nowTimestamp, signDate + 3600 * 24 * 7 > nowTimestamp {
             isPurchased = true
         } else {
             isPurchased = false
