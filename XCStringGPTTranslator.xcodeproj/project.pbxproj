@@ -20,6 +20,9 @@
 		E416EB2F2B8CE659006D7073 /* CodableWrapper in Frameworks */ = {isa = PBXBuildFile; productRef = E416EB2E2B8CE659006D7073 /* CodableWrapper */; };
 		E416EB312B8CEC4A006D7073 /* StringEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E416EB302B8CEC4A006D7073 /* StringEditView.swift */; };
 		E4305F7D2BBAF9660045BCAF /* Color+.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4305F7C2BBAF9660045BCAF /* Color+.swift */; };
+		F749D9362BC5453A0031C943 /* StoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F749D9352BC5453A0031C943 /* StoreService.swift */; };
+		F749D9392BC5496A0031C943 /* SettingsAccess in Frameworks */ = {isa = PBXBuildFile; productRef = F749D9382BC5496A0031C943 /* SettingsAccess */; };
+		F749D93E2BC550050031C943 /* SecureDefaults in Frameworks */ = {isa = PBXBuildFile; productRef = F749D93D2BC550050031C943 /* SecureDefaults */; };
 		F7D498492BBAA7CC00D93551 /* StringEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D4983B2BBAA7CC00D93551 /* StringEntry.swift */; };
 		F7D4984A2BBAA7CC00D93551 /* StringExtractionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D4983C2BBAA7CC00D93551 /* StringExtractionState.swift */; };
 		F7D4984B2BBAA7CC00D93551 /* StringLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D4983D2BBAA7CC00D93551 /* StringLanguage.swift */; };
@@ -55,6 +58,7 @@
 		E416EB2C2B8CE1AC006D7073 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		E416EB302B8CEC4A006D7073 /* StringEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringEditView.swift; sourceTree = "<group>"; };
 		E4305F7C2BBAF9660045BCAF /* Color+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+.swift"; sourceTree = "<group>"; };
+		F749D9352BC5453A0031C943 /* StoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreService.swift; sourceTree = "<group>"; };
 		F7D4983B2BBAA7CC00D93551 /* StringEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringEntry.swift; sourceTree = "<group>"; };
 		F7D4983C2BBAA7CC00D93551 /* StringExtractionState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtractionState.swift; sourceTree = "<group>"; };
 		F7D4983D2BBAA7CC00D93551 /* StringLanguage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringLanguage.swift; sourceTree = "<group>"; };
@@ -82,6 +86,8 @@
 				E416EB2F2B8CE659006D7073 /* CodableWrapper in Frameworks */,
 				E416EB192B8CC470006D7073 /* ObservableUserDefault in Frameworks */,
 				F7D6C1C12B8D87AA0094DB9D /* EventSource in Frameworks */,
+				F749D93E2BC550050031C943 /* SecureDefaults in Frameworks */,
+				F749D9392BC5496A0031C943 /* SettingsAccess in Frameworks */,
 				E416EB1B2B8CC470006D7073 /* ObservableUserDefaultClient in Frameworks */,
 				F7D6C1D22B8DDC3B0094DB9D /* XcodeProj in Frameworks */,
 			);
@@ -125,6 +131,7 @@
 				F7D6C1CE2B8DDB3D0094DB9D /* Localizable.xcstrings */,
 				E416EB0F2B8CC2F3006D7073 /* XCStringGPTTranslator.entitlements */,
 				E416EB0C2B8CC2F3006D7073 /* Preview Content */,
+				F749D9352BC5453A0031C943 /* StoreService.swift */,
 			);
 			path = XCStringGPTTranslator;
 			sourceTree = "<group>";
@@ -196,6 +203,8 @@
 				E416EB2E2B8CE659006D7073 /* CodableWrapper */,
 				F7D6C1C02B8D87AA0094DB9D /* EventSource */,
 				F7D6C1D12B8DDC3B0094DB9D /* XcodeProj */,
+				F749D9382BC5496A0031C943 /* SettingsAccess */,
+				F749D93D2BC550050031C943 /* SecureDefaults */,
 			);
 			productName = GPTxcstringTranslate;
 			productReference = E416EB032B8CC2F0006D7073 /* XCStringGPTTranslator.app */;
@@ -239,6 +248,8 @@
 				E416EB2D2B8CE659006D7073 /* XCRemoteSwiftPackageReference "CodableWrapper" */,
 				F7D6C1BF2B8D87AA0094DB9D /* XCRemoteSwiftPackageReference "EventSource" */,
 				F7D6C1D02B8DDC3B0094DB9D /* XCRemoteSwiftPackageReference "XcodeProj" */,
+				F749D9372BC5496A0031C943 /* XCRemoteSwiftPackageReference "SettingsAccess" */,
+				F749D93C2BC550050031C943 /* XCRemoteSwiftPackageReference "SecureDefaults" */,
 			);
 			productRefGroup = E416EB042B8CC2F0006D7073 /* Products */;
 			projectDirPath = "";
@@ -279,6 +290,7 @@
 				F7D4984A2BBAA7CC00D93551 /* StringExtractionState.swift in Sources */,
 				F7D4984D2BBAA7CC00D93551 /* StringSubstitution.swift in Sources */,
 				E416EB072B8CC2F0006D7073 /* GPTxcstringTranslateApp.swift in Sources */,
+				F749D9362BC5453A0031C943 /* StoreService.swift in Sources */,
 				E416EB1D2B8CC51C006D7073 /* GPTService .swift in Sources */,
 				F7D4984F2BBAA7CC00D93551 /* StringUnitState.swift in Sources */,
 				F7D4984B2BBAA7CC00D93551 /* StringLanguage.swift in Sources */,
@@ -521,6 +533,22 @@
 				minimumVersion = 1.0.3;
 			};
 		};
+		F749D9372BC5496A0031C943 /* XCRemoteSwiftPackageReference "SettingsAccess" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/orchetect/SettingsAccess";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.4.0;
+			};
+		};
+		F749D93C2BC550050031C943 /* XCRemoteSwiftPackageReference "SecureDefaults" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/vpeschenkov/SecureDefaults";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.2.2;
+			};
+		};
 		F7D6C1BF2B8D87AA0094DB9D /* XCRemoteSwiftPackageReference "EventSource" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Recouse/EventSource.git";
@@ -554,6 +582,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E416EB2D2B8CE659006D7073 /* XCRemoteSwiftPackageReference "CodableWrapper" */;
 			productName = CodableWrapper;
+		};
+		F749D9382BC5496A0031C943 /* SettingsAccess */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F749D9372BC5496A0031C943 /* XCRemoteSwiftPackageReference "SettingsAccess" */;
+			productName = SettingsAccess;
+		};
+		F749D93D2BC550050031C943 /* SecureDefaults */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F749D93C2BC550050031C943 /* XCRemoteSwiftPackageReference "SecureDefaults" */;
+			productName = SecureDefaults;
 		};
 		F7D6C1C02B8D87AA0094DB9D /* EventSource */ = {
 			isa = XCSwiftPackageProductDependency;

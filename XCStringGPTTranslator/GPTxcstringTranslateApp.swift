@@ -9,9 +9,21 @@ import SwiftUI
 
 @main
 struct GPTxcstringTranslateApp: App {
+    @Environment(\.scenePhase) private var scenePhase
+
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .openSettingsAccess()
+                .task(id: scenePhase) {
+                    if scenePhase == .active {
+                        await StoreService.shared.fetchActiveTransactions()
+                    }
+                }
+        }
+
+        Settings {
+            SettingView()
         }
     }
 }

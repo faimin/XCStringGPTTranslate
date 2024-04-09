@@ -2,9 +2,7 @@
   "sourceLanguage" : "en",
   "strings" : {
     "" : {
-      "localizations" : {
 
-      }
     },
     "-%lld" : {
       "localizations" : {
@@ -145,9 +143,7 @@
       }
     },
     "✓" : {
-      "localizations" : {
 
-      }
     },
     "🔴%@: %@, Please try again" : {
       "localizations" : {
@@ -278,9 +274,7 @@
       }
     },
     "API Key" : {
-      "localizations" : {
 
-      }
     },
     "Base" : {
       "extractionState" : "manual",
@@ -541,6 +535,7 @@
       }
     },
     "Close" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
@@ -926,15 +921,17 @@
         }
       }
     },
-    "Key" : {
-      "localizations" : {
+    "Error" : {
 
-      }
+    },
+    "GPT API Key" : {
+
+    },
+    "Key" : {
+
     },
     "Model" : {
-      "localizations" : {
 
-      }
     },
     "OK" : {
       "extractionState" : "manual",
@@ -1260,9 +1257,10 @@
       }
     },
     "OpenAI host (Optional)" : {
-      "localizations" : {
 
-      }
+    },
+    "Purchase To Unlock" : {
+
     },
     "Refresh" : {
       "localizations" : {
@@ -1327,6 +1325,9 @@
           }
         }
       }
+    },
+    "Restore" : {
+
     },
     "Save" : {
       "localizations" : {
@@ -1585,9 +1586,7 @@
       }
     },
     "XCStrings GPT translator" : {
-      "localizations" : {
 
-      }
     }
   },
   "version" : "1.0"

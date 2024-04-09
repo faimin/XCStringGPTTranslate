@@ -5,12 +5,13 @@
 //  Created by winddpan on 2024/2/26.
 //
 
+import SettingsAccess
 import SwiftUI
 
 struct ContentView: View {
+    @Environment(\.openSettings) private var openSettings
     @State private var gptServices: [GPTService] = []
     @State private var selectGptServicesTarget: GPTServiceTarget?
-    @State private var showSetting = false
     @State private var showOpenTip = false
     @State private var rootDirectory: URL?
 
@@ -121,15 +122,12 @@ struct ContentView: View {
                 }
 
                 Button(action: {
-                    showSetting = true
+                    try? openSettings()
                 }, label: {
                     Image(systemName: "gearshape.fill")
                         .font(.system(size: 18))
                 })
                 .padding(8)
-                .sheet(isPresented: $showSetting) {
-                    SettingView()
-                }
             }
 
         } detail: {

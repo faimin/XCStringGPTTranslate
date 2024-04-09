@@ -1,5 +1,5 @@
 {
-  "originHash" : "30e77054969175a4d95bf50a7728ae807e99932215cbb59732f1995bfd1a5b1d",
+  "originHash" : "06ab7fd173322f475cc56a14b9f2f1c1de1b87579e96098c07d376ee9fe65cc9",
   "pins" : [
     {
       "identity" : "aexml",
@@ -44,6 +44,24 @@
       "state" : {
         "revision" : "3bfd2737b700b9a36565a8c94f4ad2b050a5e574",
         "version" : "1.0.1"
+      }
+    },
+    {
+      "identity" : "securedefaults",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/vpeschenkov/SecureDefaults",
+      "state" : {
+        "revision" : "3f9d5d19f7401250791840bff857ed5f6b8c8ddf",
+        "version" : "1.2.2"
+      }
+    },
+    {
+      "identity" : "settingsaccess",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/orchetect/SettingsAccess",
+      "state" : {
+        "revision" : "0fd73c8b5892e88acb13adb7f36a4ba9293a0061",
+        "version" : "1.4.0"
       }
     },
     {
