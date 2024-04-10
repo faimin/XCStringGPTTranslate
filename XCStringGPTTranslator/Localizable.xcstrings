@@ -1013,49 +1013,49 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "جيد"
+            "value" : "حسنا"
           }
         },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Gut"
+            "value" : "Ok"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Good"
+            "value" : "OK"
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Bien"
+            "value" : "Ok"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Bien"
+            "value" : "Ok"
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Buono"
+            "value" : "Ok"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "いいです"
+            "value" : "Ok"
           }
         },
         "pt-PT" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Bom"
+            "value" : "Ok"
           }
         },
         "zh-Hans" : {
