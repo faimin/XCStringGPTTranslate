@@ -608,65 +608,67 @@
       }
     },
     "Comment" : {
+      "comment" : "Comment",
+      "extractionState" : "manual",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "تعليق"
+            "state" : "needs_review",
+            "value" : ""
           }
         },
         "de" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Kommentar"
+            "state" : "needs_review",
+            "value" : ""
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Comment"
+            "value" : ""
           }
         },
         "es" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Comentario"
+            "state" : "needs_review",
+            "value" : ""
           }
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Commentaire"
+            "state" : "needs_review",
+            "value" : ""
           }
         },
         "it" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Commento"
+            "state" : "needs_review",
+            "value" : ""
           }
         },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "コメント"
+            "state" : "needs_review",
+            "value" : ""
           }
         },
         "pt-PT" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Comentário"
+            "state" : "needs_review",
+            "value" : ""
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "评论"
+            "state" : "needs_review",
+            "value" : ""
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "評論"
+            "state" : "needs_review",
+            "value" : ""
           }
         }
       }
