@@ -10,7 +10,7 @@ import SecureDefaults
 import StoreKit
 
 private enum Const {
-    static let accessProductId = "gpt_access"
+    static let accessProductId = "unlock_all"
     static let signDateKey = "sign_date"
     static let signSecrect = "t8sLT4Y7stfDHTaSZJWumTtFFAlSHzj1"
 }
