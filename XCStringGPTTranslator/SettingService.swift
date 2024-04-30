@@ -25,7 +25,7 @@ class SettingService {
     var model: String
 
     @ObservationIgnored
-    var modelList: [String] = ["gpt-3.5-turbo", "gpt-4-turbo-preview"]
+    var modelList: [String] = ["gpt-3.5-turbo", "gpt-4", "gpt-4-turbo"]
 
     init() {
         if model.isEmpty {

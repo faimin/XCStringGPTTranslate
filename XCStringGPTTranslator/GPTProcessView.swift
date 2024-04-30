@@ -180,22 +180,13 @@ struct GPTProcessView: View {
                 Text(selecteRows.sorted().joined(separator: "\n"))
             })
 
-            Group {
-                Button(action: {
-                    try? gptService.reload()
-                    selecteRows = []
-                }, label: {
-                    Image(systemName: "arrow.clockwise")
-                })
-                .help("Refresh")
-
-                Picker("Base", selection: $gptService.baseLang) {
-                    ForEach(["Comment"] + gptService.langs, id: \.self) { key in
-                        Text(key + (gptService.model.sourceLanguage == key ? " (Base)" : "")).tag(key)
-                    }
-                }
-                .frame(width: 200)
-            }
+            Button(action: {
+                try? gptService.reload()
+                selecteRows = []
+            }, label: {
+                Image(systemName: "arrow.clockwise")
+            })
+            .help("Refresh")
             .disabled(gptService.isRunning)
 
             if let processMessage = gptService.processMessage {
@@ -204,6 +195,23 @@ struct GPTProcessView: View {
             }
 
             Spacer()
+
+            Group {
+                Picker("Base", selection: $gptService.baseLang) {
+                    ForEach(["Comment"] + gptService.langs, id: \.self) { key in
+                        Text(key).tag(key)
+                    }
+                }
+                .frame(width: 200)
+
+                Picker("Base2", selection: $gptService.base2Lang) {
+                    ForEach(["", "Comment"] + gptService.langs, id: \.self) { key in
+                        Text(key).tag(key)
+                    }
+                }
+                .frame(width: 200)
+            }
+            .disabled(gptService.isRunning)
         }
         .padding(.horizontal, 20)
         .padding(.vertical, 10)

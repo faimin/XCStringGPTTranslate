@@ -2,9 +2,7 @@
   "sourceLanguage" : "en",
   "strings" : {
     "" : {
-      "localizations" : {
 
-      }
     },
     "-%lld" : {
       "extractionState" : "manual",
@@ -147,9 +145,7 @@
       }
     },
     "✓" : {
-      "localizations" : {
 
-      }
     },
     "🔴%@: %@, Please try again" : {
       "localizations" : {
@@ -280,9 +276,7 @@
       }
     },
     "API Key" : {
-      "localizations" : {
 
-      }
     },
     "Base" : {
       "extractionState" : "manual",
@@ -348,6 +342,9 @@
           }
         }
       }
+    },
+    "Base2" : {
+
     },
     "Can't find .xcodeproj or .xcstrings in this directory!" : {
       "localizations" : {
@@ -995,19 +992,13 @@
       }
     },
     "GPT API Key" : {
-      "localizations" : {
 
-      }
     },
     "Key" : {
-      "localizations" : {
 
-      }
     },
     "Model" : {
-      "localizations" : {
 
-      }
     },
     "OK" : {
       "extractionState" : "manual",
@@ -1333,9 +1324,7 @@
       }
     },
     "OpenAI endpoint (Optional)" : {
-      "localizations" : {
 
-      }
     },
     "Purchase To Unlock" : {
       "localizations" : {
@@ -1786,9 +1775,7 @@
       }
     },
     "XCStrings GPT translator" : {
-      "localizations" : {
 
-      }
     },
     "You have completed the purchase, you can use it without any restrictions!" : {
       "localizations" : {

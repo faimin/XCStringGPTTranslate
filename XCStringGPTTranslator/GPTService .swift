@@ -42,6 +42,12 @@ class GPTService {
         }
     }
 
+    var base2Lang: String {
+        didSet {
+            updateLangsList()
+        }
+    }
+
     private(set) var processMessages: [ProcessMessage] = []
     private(set) var processMessage: ProcessMessage? {
         didSet {
@@ -66,6 +72,7 @@ class GPTService {
         self.target = target
         model = .init(sourceLanguage: "en", strings: [:], version: "1.0")
         baseLang = ""
+        base2Lang = ""
         langs = []
         try reload()
     }
@@ -111,6 +118,13 @@ class GPTService {
     private func updateLangsList() {
         var langs = langs
         for i in 0 ..< langs.count {
+            if langs[i] == base2Lang {
+                langs.remove(at: i)
+                langs.insert(base2Lang, at: 0)
+                break
+            }
+        }
+        for i in 0 ..< langs.count {
             if langs[i] == baseLang {
                 langs.remove(at: i)
                 langs.insert(baseLang, at: 0)
@@ -152,7 +166,7 @@ class GPTService {
 
     func removeAllTranslated(_ key: String) {
         model.strings[key]?.localizations.map(\.key).forEach { lang in
-            if lang != baseLang {
+            if lang != baseLang, lang != base2Lang {
                 model.strings[key]?.localizations[lang] = .init(stringUnit: .init(state: "needs_review", value: ""))
             }
         }
@@ -167,39 +181,58 @@ class GPTService {
 }
 
 private extension GPTService {
+    private func getLangText(_ lang: String, key: String) -> String? {
+        guard let locStr = model.strings[key] else {
+            return nil
+        }
+        let str: String?
+        if lang == "Comment" {
+            str = locStr.comment
+        } else if let text = locStr.localizations[lang],
+                  text.stringUnit?.value.nilIfEmpty != nil {
+            str = text.stringUnit!.value
+        } else if lang == model.sourceLanguage {
+            str = key
+        } else {
+            str = nil
+        }
+        return str
+    }
+
     func generateRequestMessages(_ key: String) throws -> [[String: String]] {
         guard let locStr = model.strings[key] else {
             throw "unexpected error key: \"\(key)\""
         }
-        var baseText: String?
-        if baseLang == "Comment" {
-            baseText = locStr.comment
-        } else if let _baseText = locStr.localizations[baseLang],
-                  _baseText.stringUnit?.value.nilIfEmpty != nil {
-            baseText = _baseText.stringUnit!.value
-        } else if baseLang == model.sourceLanguage {
-            baseText = key
-        }
-        guard let staticBaseText = baseText?.nilIfEmpty else {
+
+        let baseText: String? = getLangText(baseLang, key: key)
+        let base2Text: String? = getLangText(base2Lang, key: key)
+        if baseText?.nilIfEmpty == nil, base2Text?.nilIfEmpty == nil {
             throw "empty string in \"\(baseLang)\" for Key: \"\(key)\""
         }
-        var jsonDict: [String: String] = [:]
+        let sourceText = [baseText, base2Text].compactMap { $0?.nilIfEmpty }
+        let sourceTextJSON = String(data: try! JSONSerialization.data(withJSONObject: sourceText), encoding: .utf8)!
+
+        var toLangs: [String: String] = [:]
         langs.forEach { lang in
-            if lang != baseLang, locStr.localizations[lang]?.stringUnit?.value.nilIfEmpty == nil {
-                jsonDict[lang] = ""
+            if locStr.localizations[lang]?.stringUnit?.value.nilIfEmpty == nil {
+                toLangs[lang] = ""
             }
         }
-        if locStr.localizations[baseLang]?.stringUnit?.value.nilIfEmpty != nil, jsonDict.count == 2 {
+        if toLangs.isEmpty {
             throw "no language needs to be translated!"
         }
+        let toLangJSON = String(data: try! JSONSerialization.data(withJSONObject: toLangs), encoding: .utf8)!
 
-        let jsonStr = String(data: try! JSONSerialization.data(withJSONObject: jsonDict), encoding: .utf8)!
-        let prompt = "请将json中key对应的语言进行符合当地用词习惯的翻译到空白的json value中。翻译的内容是：\"\"\"\n\(staticBaseText)\n\"\"\""
+        let prompt = """
+        #需要翻译的文字，它们在不同语言中都是一个意思
+        \(sourceTextJSON)
+
+        #结合以上的意思翻译成json中key对应的语言填写到空白的json value中。
+        \(toLangJSON)
+        """
 
         var messages: [[String: String]] = []
         messages.append(["role": "system", "content": prompt])
-        messages.append(["role": "user", "content": jsonStr])
-
         return messages
     }
 
