@@ -9,7 +9,7 @@ import SettingsAccess
 import SwiftUI
 
 struct ContentView: View {
-    @Environment(\.openSettings) private var openSettings
+    @Environment(\.openSettings) private var openSettings: OpenSettingsAction
     @State private var gptServices: [GPTService] = []
     @State private var selectGptServicesTarget: GPTServiceTarget?
     @State private var showOpenTip = false
@@ -122,7 +122,7 @@ struct ContentView: View {
                 }
 
                 Button(action: {
-                    try? openSettings()
+                    openSettings()
                 }, label: {
                     Image(systemName: "gearshape.fill")
                         .font(.system(size: 18))

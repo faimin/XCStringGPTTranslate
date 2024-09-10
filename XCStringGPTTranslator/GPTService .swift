@@ -238,7 +238,7 @@ private extension GPTService {
 
     func parseMessage(_ message: String) -> String {
         let message = message.trimmingCharacters(in: .whitespacesAndNewlines)
-        let regexStr = #"(?<=\{"content":").*(?="\})"#
+        let regexStr = #"(?<="content":\s?")(.*?)(?<!\\)(?=")"#
         let regex = try! NSRegularExpression(pattern: regexStr)
         let text = regex
             .matches(in: message, range: NSRange(location: 0, length: message.count))
@@ -264,7 +264,15 @@ private extension GPTService {
             .forEach { lang, value in
                 var locStr = model.strings[key] ?? .init(extractionState: "manual")
                 if locStr.localizations[lang]?.stringUnit?.value.nilIfEmpty == nil {
-                    locStr.localizations[lang] = .init(stringUnit: .init(state: "translated", value: key.isFirstCharCapitalized ? value.firstCharCapitalized : value))
+                    var fixedValue = value
+                    if key.isFirstCharCapitalized {
+                        fixedValue = fixedValue.firstCharCapitalized
+                    }
+                    let rawCapitalizedComps = key.components(separatedBy: " ").filter { $0.isFirstCharCapitalized }
+                    rawCapitalizedComps.forEach { string in
+                        fixedValue = fixedValue.replacingOccurrences(of: string.lowercased(), with: string)
+                    }
+                    locStr.localizations[lang] = .init(stringUnit: .init(state: "translated", value: fixedValue))
                     translated.append(lang)
                 }
                 model.strings[key] = locStr

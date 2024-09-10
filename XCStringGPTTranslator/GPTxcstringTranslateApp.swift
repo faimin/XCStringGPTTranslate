@@ -15,11 +15,6 @@ struct GPTxcstringTranslateApp: App {
         WindowGroup {
             ContentView()
                 .openSettingsAccess()
-                .task(id: scenePhase) {
-                    if scenePhase == .active {
-                        await StoreService.shared.fetchActiveTransactions()
-                    }
-                }
         }
 
         Settings {

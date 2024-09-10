@@ -10,21 +10,11 @@ import SwiftUI
 struct SettingView: View {
     @Environment(\.dismiss) var dismiss
     @State var settingService = SettingService.shared
-    @State var storeService = StoreService.shared
-    @State var busy = false
-    @State var errorText: String?
 
     var body: some View {
         NavigationStack {
             VStack(spacing: 30) {
                 VStack(spacing: 0) {
-                    if storeService.isPurchased {
-                        Text("You have completed the purchase, you can use it without any restrictions!")
-                            .font(.caption2)
-                            .foregroundStyle(Color.green)
-                            .padding(.bottom, 20)
-                    }
-
                     HStack {
                         Text("GPT API Key")
                             .frame(width: 80, alignment: .trailing)
@@ -52,55 +42,6 @@ struct SettingView: View {
                     }
                     .frame(height: 44)
                 }
-                .disabled(!storeService.isPurchased)
-
-                if !storeService.isPurchased {
-                    HStack {
-                        Button(action: {
-                            Task { @MainActor in
-                                busy = true
-                                do {
-                                    try await storeService.restore()
-                                } catch {
-                                    print(error)
-                                    errorText = error.localizedDescription
-                                }
-                                busy = false
-                            }
-                        }, label: {
-                            Text("Restore")
-                        })
-
-                        Button(action: {
-                            Task { @MainActor in
-                                busy = true
-                                do {
-                                    try await storeService.purchase()
-                                } catch {
-                                    print(error)
-                                    errorText = error.localizedDescription
-                                }
-                                busy = false
-                            }
-                        }, label: {
-                            Text("Purchase To Unlock")
-                                .foregroundStyle(Color.accentColor)
-                        })
-                    }
-                    .disabled(busy)
-                    .alert("Error",
-                           isPresented: .init(get: { errorText != nil }, set: {
-                               if !$0 {
-                                   errorText = nil
-                               }
-                           }), actions: {
-                               Button(role: .cancel, action: {}) {
-                                   Text("OK")
-                               }
-                           }, message: {
-                               Text(errorText ?? "")
-                           })
-                }
 
                 Spacer()
             }
@@ -108,12 +49,6 @@ struct SettingView: View {
             .frame(width: 400, height: 300)
             .navigationTitle("Settings")
         }
-        .onAppear(perform: {
-            if !storeService.isPurchased {
-                settingService.gptServer = ""
-                settingService.gptAPIKey = ""
-            }
-        })
     }
 }
 

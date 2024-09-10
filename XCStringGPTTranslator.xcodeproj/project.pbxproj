@@ -20,7 +20,6 @@
 		E416EB2F2B8CE659006D7073 /* CodableWrapper in Frameworks */ = {isa = PBXBuildFile; productRef = E416EB2E2B8CE659006D7073 /* CodableWrapper */; };
 		E416EB312B8CEC4A006D7073 /* StringEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E416EB302B8CEC4A006D7073 /* StringEditView.swift */; };
 		E4305F7D2BBAF9660045BCAF /* Color+.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4305F7C2BBAF9660045BCAF /* Color+.swift */; };
-		F749D9362BC5453A0031C943 /* StoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F749D9352BC5453A0031C943 /* StoreService.swift */; };
 		F749D9392BC5496A0031C943 /* SettingsAccess in Frameworks */ = {isa = PBXBuildFile; productRef = F749D9382BC5496A0031C943 /* SettingsAccess */; };
 		F749D93E2BC550050031C943 /* SecureDefaults in Frameworks */ = {isa = PBXBuildFile; productRef = F749D93D2BC550050031C943 /* SecureDefaults */; };
 		F7D498492BBAA7CC00D93551 /* StringEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D4983B2BBAA7CC00D93551 /* StringEntry.swift */; };
@@ -58,7 +57,6 @@
 		E416EB2C2B8CE1AC006D7073 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		E416EB302B8CEC4A006D7073 /* StringEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringEditView.swift; sourceTree = "<group>"; };
 		E4305F7C2BBAF9660045BCAF /* Color+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+.swift"; sourceTree = "<group>"; };
-		F749D9352BC5453A0031C943 /* StoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreService.swift; sourceTree = "<group>"; };
 		F7D4983B2BBAA7CC00D93551 /* StringEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringEntry.swift; sourceTree = "<group>"; };
 		F7D4983C2BBAA7CC00D93551 /* StringExtractionState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtractionState.swift; sourceTree = "<group>"; };
 		F7D4983D2BBAA7CC00D93551 /* StringLanguage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringLanguage.swift; sourceTree = "<group>"; };
@@ -123,7 +121,6 @@
 				E416EB1E2B8CC76E006D7073 /* GPTProcessView.swift */,
 				E416EB152B8CC34E006D7073 /* SettingService.swift */,
 				E416EB1C2B8CC51C006D7073 /* GPTService .swift */,
-				F749D9352BC5453A0031C943 /* StoreService.swift */,
 				E416EB2A2B8CDF7F006D7073 /* SettingView.swift */,
 				E416EB302B8CEC4A006D7073 /* StringEditView.swift */,
 				F7D6C1D42B8DDE710094DB9D /* GPTServiceOpenButtonView.swift */,
@@ -218,7 +215,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1520;
-				LastUpgradeCheck = 1530;
+				LastUpgradeCheck = 1600;
 				TargetAttributes = {
 					E416EB022B8CC2F0006D7073 = {
 						CreatedOnToolsVersion = 15.2;
@@ -290,7 +287,6 @@
 				F7D4984A2BBAA7CC00D93551 /* StringExtractionState.swift in Sources */,
 				F7D4984D2BBAA7CC00D93551 /* StringSubstitution.swift in Sources */,
 				E416EB072B8CC2F0006D7073 /* GPTxcstringTranslateApp.swift in Sources */,
-				F749D9362BC5453A0031C943 /* StoreService.swift in Sources */,
 				E416EB1D2B8CC51C006D7073 /* GPTService .swift in Sources */,
 				F7D4984F2BBAA7CC00D93551 /* StringUnitState.swift in Sources */,
 				F7D4984B2BBAA7CC00D93551 /* StringLanguage.swift in Sources */,
@@ -314,6 +310,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -378,6 +375,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -438,7 +436,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 10;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"$(SRCROOT)/XCStringGPTTranslator/Preview Content\"";
 				DEVELOPMENT_TEAM = Y457P5Q8XM;
@@ -453,7 +451,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 14.4;
-				MARKETING_VERSION = 2.0;
+				MARKETING_VERSION = 3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.wp.XCStringGPTTranslate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -470,7 +468,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 10;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"$(SRCROOT)/XCStringGPTTranslator/Preview Content\"";
 				DEVELOPMENT_TEAM = Y457P5Q8XM;
@@ -485,7 +483,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 14.4;
-				MARKETING_VERSION = 2.0;
+				MARKETING_VERSION = 3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.wp.XCStringGPTTranslate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
