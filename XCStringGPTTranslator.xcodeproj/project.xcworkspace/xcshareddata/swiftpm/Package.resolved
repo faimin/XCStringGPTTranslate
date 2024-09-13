@@ -1,5 +1,5 @@
 {
-  "originHash" : "06ab7fd173322f475cc56a14b9f2f1c1de1b87579e96098c07d376ee9fe65cc9",
+  "originHash" : "ee1920e198559b6f682a7d07530c27d30f0640ab41f04f1e09bc3d78824e0044",
   "pins" : [
     {
       "identity" : "aexml",
@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/winddpan/CodableWrapper.git",
       "state" : {
-        "revision" : "80707b3e69831ad07289e98d62ebf09bff8e9896",
-        "version" : "1.0.3"
+        "revision" : "ab56ff6eef7294af03b973a161a6a6724c4e79a7",
+        "version" : "1.1.1"
       }
     },
     {
@@ -87,8 +87,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/tuist/XcodeProj.git",
       "state" : {
-        "revision" : "75e787fb3eb5a8397c3d06d5a71e667ac2d20ac1",
-        "version" : "8.19.0"
+        "revision" : "aaef02b5d7a78aae5ff6d7b2a1c8349dd596e6ea",
+        "version" : "8.23.6"
       }
     }
   ],
