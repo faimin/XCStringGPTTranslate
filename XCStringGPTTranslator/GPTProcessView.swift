@@ -27,18 +27,19 @@ struct GPTProcessView: View {
         let keys = gptService.model.strings.keys.sorted()
         Table(keys, selection: $selecteRows) {
             TableColumn("") { key in
-                Group {
-                    let locStr = gptService.model.strings[key]!
-                    let translatedCount = locStr.localizations.values.compactMap {
-                        $0.stringUnit?.value.nilIfEmpty == nil ? nil : $0
-                    }
-                    let lack = gptService.langs.count - translatedCount.count
-                    if lack > 0 {
-                        Text("-\(lack)").foregroundStyle(Color.red)
-                            .minimumScaleFactor(0.5)
-                    } else {
-                        Text("✓").foregroundStyle(Color.green)
-                            .minimumScaleFactor(0.5)
+                if let locStr = gptService.model.strings[key] {
+                    Group {
+                        let translatedCount = locStr.localizations.values.compactMap {
+                            $0.stringUnit?.value.nilIfEmpty == nil ? nil : $0
+                        }
+                        let lack = gptService.langs.count - translatedCount.count
+                        if lack > 0 {
+                            Text("-\(lack)").foregroundStyle(Color.red)
+                                .minimumScaleFactor(0.5)
+                        } else {
+                            Text("✓").foregroundStyle(Color.green)
+                                .minimumScaleFactor(0.5)
+                        }
                     }
                 }
             }
@@ -62,7 +63,7 @@ struct GPTProcessView: View {
                 Text(gptService.model.strings[key]?.comment ?? "")
                     .font(.system(size: 13))
                     .lineLimit(3)
-                    .underline(true)
+                    // .underline(true)
                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
                     .background(Color.gray.opacity(0.001))
                     .id(keyLang)
@@ -98,7 +99,7 @@ struct GPTProcessView: View {
                     Text(binding.wrappedValue)
                         .font(.system(size: 13))
                         .lineLimit(3)
-                        .underline(true)
+                         // .underline(true)
                         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
                         .background(Color.gray.opacity(0.001))
                         .id(keyLang)
