@@ -436,7 +436,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 12;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"$(SRCROOT)/XCStringGPTTranslator/Preview Content\"";
 				DEVELOPMENT_TEAM = Y457P5Q8XM;
@@ -468,7 +468,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 12;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"$(SRCROOT)/XCStringGPTTranslator/Preview Content\"";
 				DEVELOPMENT_TEAM = Y457P5Q8XM;
@@ -551,8 +551,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Recouse/EventSource.git";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.0.7;
+				kind = exactVersion;
+				version = 0.0.7;
 			};
 		};
 		F7D6C1D02B8DDC3B0094DB9D /* XCRemoteSwiftPackageReference "XcodeProj" */ = {

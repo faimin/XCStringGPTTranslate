@@ -2,71 +2,8 @@
   "sourceLanguage" : "en",
   "strings" : {
     "" : {
-
-    },
-    "-%lld" : {
-      "extractionState" : "manual",
       "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : ""
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : ""
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : ""
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : ""
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : ""
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : ""
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : ""
-          }
-        },
-        "pt-PT" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : ""
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : ""
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : ""
-          }
-        }
+
       }
     },
     "%@  <<< %@" : {
@@ -144,139 +81,75 @@
         }
       }
     },
-    "✓" : {
-
-    },
-    "🔴%@: %@, Please try again" : {
+    "-%lld" : {
+      "extractionState" : "manual",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "🔴%1$@: %2$@، يرجى المحاولة مرة أخرى"
+            "state" : "needs_review",
+            "value" : ""
           }
         },
         "de" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "🔴%1$@: %2$@, Bitte versuchen Sie es erneut"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "🔴%1$@: %2$@, Please try again"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "🔴%1$@: %2$@, Por favor, inténtalo de nuevo"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "🔴%1$@：%2$@, Veuillez réessayer"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "🔴%1$@: %2$@, Per favore riprova"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "🔴%1$@：%2$@、もう一度お試しください"
-          }
-        },
-        "pt-PT" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "🔴%1$@: %2$@, Por favor, tente novamente"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "🔴%1$@：%2$@，请重试"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "🔴%1$@：%2$@，請再試一次"
-          }
-        }
-      }
-    },
-    "🟡%@: Start" : {
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "🟡%@: ابدأ"
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "🟡%@: Start"
+            "state" : "needs_review",
+            "value" : ""
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "🟡%@: Start"
+            "value" : ""
           }
         },
         "es" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "🟡%@: Comenzar"
+            "state" : "needs_review",
+            "value" : ""
           }
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "🟡%@: Démarrer"
+            "state" : "needs_review",
+            "value" : ""
           }
         },
         "it" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "🟡%@: Inizio"
+            "state" : "needs_review",
+            "value" : ""
           }
         },
         "ja" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "🟡%@: スタート"
+            "state" : "needs_review",
+            "value" : ""
           }
         },
         "pt-PT" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "🟡%@: Iniciar"
+            "state" : "needs_review",
+            "value" : ""
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "🟡%@: 开始"
+            "state" : "needs_review",
+            "value" : ""
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "🟡%@: 開始"
+            "state" : "needs_review",
+            "value" : ""
           }
         }
       }
     },
     "API Key" : {
+      "localizations" : {
 
+      }
     },
     "Base" : {
       "extractionState" : "manual",
@@ -344,7 +217,9 @@
       }
     },
     "Base2" : {
+      "localizations" : {
 
+      }
     },
     "Can't find .xcodeproj or .xcstrings in this directory!" : {
       "localizations" : {
@@ -535,71 +410,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "清除"
-          }
-        }
-      }
-    },
-    "Close" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "إغلاق"
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Schließen"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Close"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Cerrar"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Fermer"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Chiudi"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "閉じる"
-          }
-        },
-        "pt-PT" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Fechar"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "关闭"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "關閉"
           }
         }
       }
@@ -927,79 +737,20 @@
         }
       }
     },
-    "Error" : {
-      "extractionState" : "stale",
+    "GPT API Key" : {
       "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "خطأ"
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Fehler"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Error"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Error"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Erreur"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Errore"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "エラー"
-          }
-        },
-        "pt-PT" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Erro"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "错误"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "錯誤"
-          }
-        }
+
       }
     },
-    "GPT API Key" : {
-
-    },
     "Key" : {
+      "localizations" : {
 
+      }
     },
     "Model" : {
+      "localizations" : {
 
+      }
     },
     "OK" : {
       "extractionState" : "manual",
@@ -1259,6 +1010,71 @@
         }
       }
     },
+    "Open Xcode Project directory" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "فتح دليل مشروع Xcode"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Öffnen sie das Xcode-projektverzeichnis"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Open Xcode Project directory"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abrir el directorio del proyecto Xcode"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ouvrir le répertoire du projet Xcode"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apri la directory del progetto Xcode"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Xcodeプロジェクトディレクトリを開く"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abrir diretório do projeto Xcode"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "打开 Xcode 项目目录"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "打開 Xcode 項目目錄"
+          }
+        }
+      }
+    },
     "Open your Project root directory!" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -1325,71 +1141,8 @@
       }
     },
     "OpenAI endpoint (Optional)" : {
-
-    },
-    "Purchase To Unlock" : {
-      "extractionState" : "stale",
       "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "شراء لفتح"
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Kaufen zum entsperren"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Purchase to unlock"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Comprar para desbloquear"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Acheter pour débloquer"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Acquista per sbloccare"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ロックを解除するために購入する"
-          }
-        },
-        "pt-PT" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Comprar para desbloquear"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "购买解锁"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "購買解鎖"
-          }
-        }
+
       }
     },
     "Refresh" : {
@@ -1452,71 +1205,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "刷新"
-          }
-        }
-      }
-    },
-    "Restore" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "استعادة"
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Wiederherstellen"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Restore"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Restaurar"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Restaurer"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ripristino"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "復元"
-          }
-        },
-        "pt-PT" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Restaurar"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "恢复"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "恢復"
           }
         }
       }
@@ -1778,69 +1466,139 @@
       }
     },
     "XCStrings GPT translator" : {
+      "localizations" : {
 
+      }
     },
-    "You have completed the purchase, you can use it without any restrictions!" : {
-      "extractionState" : "stale",
+    "✓" : {
+      "localizations" : {
+
+      }
+    },
+    "🔴%@: %@, Please try again" : {
       "localizations" : {
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "لقد أكملت الشراء ، يمكنك استخدامه بدون أي قيود!"
+            "value" : "🔴%1$@: %2$@، يرجى المحاولة مرة أخرى"
           }
         },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Sie haben den kauf abgeschlossen, sie können ihn ohne einschränkungen verwenden!"
+            "value" : "🔴%1$@: %2$@, Bitte versuchen Sie es erneut"
           }
         },
         "en" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "You have completed the purchase, you can use it without any restrictions!"
+            "state" : "new",
+            "value" : "🔴%1$@: %2$@, Please try again"
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Has completado la compra, ¡puedes usarla sin restricciones!"
+            "value" : "🔴%1$@: %2$@, Por favor, inténtalo de nuevo"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Vous avez terminé votre achat, vous pouvez l'utiliser sans aucune restriction !"
+            "value" : "🔴%1$@：%2$@, Veuillez réessayer"
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Hai completato l'acquisto, puoi usarlo senza restrizioni!"
+            "value" : "🔴%1$@: %2$@, Per favore riprova"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "ご購入が完了しました、制限なくご利用いただけます！"
+            "value" : "🔴%1$@：%2$@、もう一度お試しください"
           }
         },
         "pt-PT" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Você concluiu a compra, pode usá-la sem restrições!"
+            "value" : "🔴%1$@: %2$@, Por favor, tente novamente"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "您已完成购买，可以无限制地使用它！"
+            "value" : "🔴%1$@：%2$@，请重试"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "您已完成購買，可以無限制地使用它！"
+            "value" : "🔴%1$@：%2$@，請再試一次"
+          }
+        }
+      }
+    },
+    "🟡%@: Start" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🟡%@: ابدأ"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🟡%@: Start"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🟡%@: Start"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🟡%@: Comenzar"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🟡%@: Démarrer"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🟡%@: Inizio"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🟡%@: スタート"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🟡%@: Iniciar"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🟡%@: 开始"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🟡%@: 開始"
           }
         }
       }

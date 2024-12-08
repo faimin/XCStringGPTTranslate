@@ -45,7 +45,7 @@ struct ContentView: View {
                 Text("Drag and Drop Project directory")
                     .font(.title)
 
-                Button("Open Project directory") {
+                Button("Open Xcode Project directory") {
                     let panel = NSOpenPanel()
                     panel.allowsMultipleSelection = false
                     panel.canChooseDirectories = true
