@@ -12,8 +12,9 @@ struct ContentView: View {
     @Environment(\.openSettings) private var openSettings: OpenSettingsAction
     @State private var gptServices: [GPTService] = []
     @State private var selectGptServicesTarget: GPTServiceTarget?
-    @State private var showOpenTip = false
     @State private var rootDirectory: URL?
+    @State private var noXcprojTip = false
+    @State private var noXcstringsTip = false
 
     var body: some View {
         ZStack {
@@ -62,10 +63,15 @@ struct ContentView: View {
             }
             return false
         }
-        .alert("Open your Project root directory!", isPresented: $showOpenTip) {
+        .alert("Open your Project root directory!", isPresented: $noXcprojTip) {
             Button("OK", role: .cancel) {}
         } message: {
-            Text("Can't find .xcodeproj or .xcstrings in this directory!")
+            Text("Can't find .xcodeproj in this directory!")
+        }
+        .alert("Open your Project root directory!", isPresented: $noXcstringsTip) {
+            Button("OK", role: .cancel) {}
+        } message: {
+            Text("Can't find .xcstrings in your project's directory!")
         }
     }
 
@@ -102,8 +108,11 @@ struct ContentView: View {
                 return true
             }
         }
-
-        showOpenTip = true
+        if xcproj == nil {
+            noXcprojTip = true
+        } else if xcstrings.isEmpty {
+            noXcstringsTip = true
+        }
         return false
     }
 

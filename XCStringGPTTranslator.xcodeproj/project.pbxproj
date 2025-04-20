@@ -21,6 +21,7 @@
 		E416EB312B8CEC4A006D7073 /* StringEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E416EB302B8CEC4A006D7073 /* StringEditView.swift */; };
 		E4305F7D2BBAF9660045BCAF /* Color+.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4305F7C2BBAF9660045BCAF /* Color+.swift */; };
 		E46518B12D05D58A00C2F70C /* String+escaping.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46518B02D05D58A00C2F70C /* String+escaping.swift */; };
+		E4E73A122DA8036600AE6027 /* XcodeProj in Frameworks */ = {isa = PBXBuildFile; productRef = E4E73A112DA8036600AE6027 /* XcodeProj */; };
 		F749D9392BC5496A0031C943 /* SettingsAccess in Frameworks */ = {isa = PBXBuildFile; productRef = F749D9382BC5496A0031C943 /* SettingsAccess */; };
 		F749D93E2BC550050031C943 /* SecureDefaults in Frameworks */ = {isa = PBXBuildFile; productRef = F749D93D2BC550050031C943 /* SecureDefaults */; };
 		F7D498492BBAA7CC00D93551 /* StringEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D4983B2BBAA7CC00D93551 /* StringEntry.swift */; };
@@ -39,7 +40,6 @@
 		F7D6C1CB2B8DBF480094DB9D /* AppStorage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D6C1CA2B8DBF480094DB9D /* AppStorage+.swift */; };
 		F7D6C1CD2B8DC0880094DB9D /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D6C1CC2B8DC0880094DB9D /* TagView.swift */; };
 		F7D6C1CF2B8DDB3D0094DB9D /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F7D6C1CE2B8DDB3D0094DB9D /* Localizable.xcstrings */; };
-		F7D6C1D22B8DDC3B0094DB9D /* XcodeProj in Frameworks */ = {isa = PBXBuildFile; productRef = F7D6C1D12B8DDC3B0094DB9D /* XcodeProj */; };
 		F7D6C1D52B8DDE710094DB9D /* GPTServiceOpenButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D6C1D42B8DDE710094DB9D /* GPTServiceOpenButtonView.swift */; };
 		F7E7CCC12BB429F900944E2F /* test.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F7E7CCC02BB429F900944E2F /* test.bundle */; };
 /* End PBXBuildFile section */
@@ -88,8 +88,8 @@
 				F7D6C1C12B8D87AA0094DB9D /* EventSource in Frameworks */,
 				F749D93E2BC550050031C943 /* SecureDefaults in Frameworks */,
 				F749D9392BC5496A0031C943 /* SettingsAccess in Frameworks */,
+				E4E73A122DA8036600AE6027 /* XcodeProj in Frameworks */,
 				E416EB1B2B8CC470006D7073 /* ObservableUserDefaultClient in Frameworks */,
-				F7D6C1D22B8DDC3B0094DB9D /* XcodeProj in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -202,9 +202,9 @@
 				E416EB1A2B8CC470006D7073 /* ObservableUserDefaultClient */,
 				E416EB2E2B8CE659006D7073 /* CodableWrapper */,
 				F7D6C1C02B8D87AA0094DB9D /* EventSource */,
-				F7D6C1D12B8DDC3B0094DB9D /* XcodeProj */,
 				F749D9382BC5496A0031C943 /* SettingsAccess */,
 				F749D93D2BC550050031C943 /* SecureDefaults */,
+				E4E73A112DA8036600AE6027 /* XcodeProj */,
 			);
 			productName = GPTxcstringTranslate;
 			productReference = E416EB032B8CC2F0006D7073 /* XCStringGPTTranslator.app */;
@@ -247,9 +247,9 @@
 				E416EB172B8CC470006D7073 /* XCRemoteSwiftPackageReference "ObservableUserDefault" */,
 				E416EB2D2B8CE659006D7073 /* XCRemoteSwiftPackageReference "CodableWrapper" */,
 				F7D6C1BF2B8D87AA0094DB9D /* XCRemoteSwiftPackageReference "EventSource" */,
-				F7D6C1D02B8DDC3B0094DB9D /* XCRemoteSwiftPackageReference "XcodeProj" */,
 				F749D9372BC5496A0031C943 /* XCRemoteSwiftPackageReference "SettingsAccess" */,
 				F749D93C2BC550050031C943 /* XCRemoteSwiftPackageReference "SecureDefaults" */,
+				E4E73A102DA8036600AE6027 /* XCRemoteSwiftPackageReference "XcodeProj" */,
 			);
 			productRefGroup = E416EB042B8CC2F0006D7073 /* Products */;
 			projectDirPath = "";
@@ -440,7 +440,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 12;
+				CURRENT_PROJECT_VERSION = 13;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"$(SRCROOT)/XCStringGPTTranslator/Preview Content\"";
 				DEVELOPMENT_TEAM = Y457P5Q8XM;
@@ -455,7 +455,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 14.4;
-				MARKETING_VERSION = 3.2;
+				MARKETING_VERSION = 3.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.wp.XCStringGPTTranslate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -472,7 +472,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 12;
+				CURRENT_PROJECT_VERSION = 13;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"$(SRCROOT)/XCStringGPTTranslator/Preview Content\"";
 				DEVELOPMENT_TEAM = Y457P5Q8XM;
@@ -487,7 +487,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 14.4;
-				MARKETING_VERSION = 3.2;
+				MARKETING_VERSION = 3.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.wp.XCStringGPTTranslate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -535,6 +535,14 @@
 				minimumVersion = 1.0.3;
 			};
 		};
+		E4E73A102DA8036600AE6027 /* XCRemoteSwiftPackageReference "XcodeProj" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/tuist/XcodeProj.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.2;
+			};
+		};
 		F749D9372BC5496A0031C943 /* XCRemoteSwiftPackageReference "SettingsAccess" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/orchetect/SettingsAccess";
@@ -559,14 +567,6 @@
 				version = 0.0.7;
 			};
 		};
-		F7D6C1D02B8DDC3B0094DB9D /* XCRemoteSwiftPackageReference "XcodeProj" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/tuist/XcodeProj.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 8.19.0;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -585,6 +585,11 @@
 			package = E416EB2D2B8CE659006D7073 /* XCRemoteSwiftPackageReference "CodableWrapper" */;
 			productName = CodableWrapper;
 		};
+		E4E73A112DA8036600AE6027 /* XcodeProj */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E4E73A102DA8036600AE6027 /* XCRemoteSwiftPackageReference "XcodeProj" */;
+			productName = XcodeProj;
+		};
 		F749D9382BC5496A0031C943 /* SettingsAccess */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = F749D9372BC5496A0031C943 /* XCRemoteSwiftPackageReference "SettingsAccess" */;
@@ -599,11 +604,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F7D6C1BF2B8D87AA0094DB9D /* XCRemoteSwiftPackageReference "EventSource" */;
 			productName = EventSource;
-		};
-		F7D6C1D12B8DDC3B0094DB9D /* XcodeProj */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = F7D6C1D02B8DDC3B0094DB9D /* XCRemoteSwiftPackageReference "XcodeProj" */;
-			productName = XcodeProj;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

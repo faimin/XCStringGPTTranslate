@@ -221,7 +221,72 @@
 
       }
     },
+    "Can't find .xcodeproj in this directory!" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "لا يمكن العثور على .xcodeproj في هذا الدليل!"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kann .xcodeproj in diesem verzeichnis nicht finden!"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Can't find .xcodeproj in this directory!"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "¡no se puede encontrar .xcodeproj en este directorio!"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Impossible de trouver .xcodeproj dans ce répertoire !"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Impossibile trovare .xcodeproj in questa directory!"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "このディレクトリに.xcodeprojが見つかりません！"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Não é possível encontrar .xcodeproj neste diretório!"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "在此目录中找不到.xcodeproj！"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "在此目錄中找不到.xcodeproj！"
+          }
+        }
+      }
+    },
     "Can't find .xcodeproj or .xcstrings in this directory!" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
@@ -281,6 +346,70 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "在此目錄中找不到.xcodeproj或.xcstrings文件！"
+          }
+        }
+      }
+    },
+    "Can't find .xcstrings in your project's directory!" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "لا يمكن العثور على .xcstrings في دليل مشروعك!"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Konnte .xcstrings in ihrem projektverzeichnis nicht finden!"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Can't find .xcstrings in your project's directory!"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "¡no se puede encontrar .xcstrings en el directorio de tu proyecto!"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Impossible de trouver .xcstrings dans le répertoire de votre projet !"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Impossibile trovare .xcstrings nella directory del tuo progetto!"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "プロジェクトのディレクトリに .xcstrings が見つかりません！"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Não foi possível encontrar .xcstrings no diretório do seu projeto!"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "在您的项目目录中找不到 .xcstrings！"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "在您的專案目錄中找不到 .xcstrings！"
           }
         }
       }

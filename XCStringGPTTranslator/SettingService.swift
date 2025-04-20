@@ -25,7 +25,7 @@ class SettingService {
     var model: String
 
     @ObservationIgnored
-    var modelList: [String] = ["gpt-4o-mini", "gpt-4o", "gpt-4-turbo"]
+    var modelList: [String] = ["gpt-4o-mini", "gpt-4o", "gpt-o1-mini", "gpt-o3-mini"]
 
     init() {
         if model.isEmpty || !modelList.contains(model) {
