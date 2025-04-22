@@ -46,9 +46,32 @@ struct GPTProcessView: View {
             .width(25)
 
             TableColumn("Key") { key in
+                let keyLang = "\(key)-Key"
+                let binding = Binding<String>(get: {
+                    key
+                }, set: { newValue in
+                    guard newValue != key else { return }
+                    let valueModel = gptService.model.strings[key]
+                    gptService.model.strings[key] = nil
+                    gptService.model.strings[newValue] = valueModel
+                })
+                
                 Text(key)
                     .lineLimit(3)
                     .frame(alignment: .leading)
+                    .id(keyLang)
+                    .onTapGesture {
+                        editingKeyLang = keyLang
+                    }
+                    .sheet(isPresented: Binding(get: {
+                        editingKeyLang == keyLang
+                    }, set: { show in
+                        if !show {
+                            editingKeyLang = nil
+                        }
+                    })) {
+                        StringEditView(title: "Key", key: key, comment: nil, text: binding)
+                    }
             }
             .width(ideal: 200)
 
