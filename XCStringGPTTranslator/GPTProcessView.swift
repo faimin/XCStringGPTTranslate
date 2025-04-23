@@ -13,7 +13,32 @@ struct GPTProcessView: View {
     @State var editingKeyLang: String?
     @State var selecteRows = Set<String>()
     @State var deleteConfirm = false
-
+    @Binding var searchText: String
+    
+    private var allLocalizeKeys: [String] {
+        let filteredStrings = gptService.model.strings.filter { item in
+            guard !searchText.isEmpty else {
+                return true
+            }
+            
+            if item.key.lowercased().contains(searchText) {
+                return true
+            }
+            for lang in gptService.langs {
+                guard let text = item.value.localizations[lang]?.stringUnit?.value else { continue }
+                guard text.lowercased().contains(searchText) else {
+                    continue
+                }
+                return true
+            }
+            return false
+        }
+        
+        //let keys = gptService.model.strings.keys.sorted()
+        let keys = filteredStrings.keys.sorted()
+        return keys
+    }
+    
     var body: some View {
         VStack(spacing: 0) {
             header
@@ -24,8 +49,7 @@ struct GPTProcessView: View {
 
     @ViewBuilder
     private var listContent: some View {
-        let keys = gptService.model.strings.keys.sorted()
-        Table(keys, selection: $selecteRows) {
+        Table(allLocalizeKeys, selection: $selecteRows) {
             TableColumn("") { key in
                 if let locStr = gptService.model.strings[key] {
                     Group {
@@ -248,7 +272,7 @@ struct GPTProcessView: View {
         let xcstringURL = testBundle.url(forResource: "dev-xcstrings", withExtension: "json")
         let xcprojURL = testBundle.url(forResource: "XCStringGPTTranslate", withExtension: "xcodeproj")
         let service = try GPTService(target: GPTServiceTarget(xcstringURL: xcstringURL!, xcprojURL: xcprojURL!))
-        return GPTProcessView(gptService: service)
+        return GPTProcessView(gptService: service, searchText: Binding.constant("hello"))
     } catch {
         print(error)
         return Color.red

@@ -2,8 +2,71 @@
   "sourceLanguage" : "en",
   "strings" : {
     "" : {
-      "localizations" : {
 
+    },
+    "-%lld" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : ""
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : ""
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : ""
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : ""
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : ""
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : ""
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : ""
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : ""
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : ""
+          }
+        }
       }
     },
     "%@  <<< %@" : {
@@ -81,75 +144,139 @@
         }
       }
     },
-    "-%lld" : {
-      "extractionState" : "manual",
+    "✓" : {
+
+    },
+    "🔴%@: %@, Please try again" : {
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : ""
+            "state" : "translated",
+            "value" : "🔴%1$@: %2$@، يرجى المحاولة مرة أخرى"
           }
         },
         "de" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : ""
+            "state" : "translated",
+            "value" : "🔴%1$@: %2$@, Bitte versuchen Sie es erneut"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "🔴%1$@: %2$@, Please try again"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🔴%1$@: %2$@, Por favor, inténtalo de nuevo"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🔴%1$@：%2$@, Veuillez réessayer"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🔴%1$@: %2$@, Per favore riprova"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🔴%1$@：%2$@、もう一度お試しください"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🔴%1$@: %2$@, Por favor, tente novamente"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🔴%1$@：%2$@，请重试"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🔴%1$@：%2$@，請再試一次"
+          }
+        }
+      }
+    },
+    "🟡%@: Start" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🟡%@: ابدأ"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🟡%@: Start"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : ""
+            "value" : "🟡%@: Start"
           }
         },
         "es" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : ""
+            "state" : "translated",
+            "value" : "🟡%@: Comenzar"
           }
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : ""
+            "state" : "translated",
+            "value" : "🟡%@: Démarrer"
           }
         },
         "it" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : ""
+            "state" : "translated",
+            "value" : "🟡%@: Inizio"
           }
         },
         "ja" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : ""
+            "state" : "translated",
+            "value" : "🟡%@: スタート"
           }
         },
         "pt-PT" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : ""
+            "state" : "translated",
+            "value" : "🟡%@: Iniciar"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : ""
+            "state" : "translated",
+            "value" : "🟡%@: 开始"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : ""
+            "state" : "translated",
+            "value" : "🟡%@: 開始"
           }
         }
       }
     },
     "API Key" : {
-      "localizations" : {
 
-      }
     },
     "Base" : {
       "extractionState" : "manual",
@@ -217,9 +344,7 @@
       }
     },
     "Base2" : {
-      "localizations" : {
 
-      }
     },
     "Can't find .xcodeproj in this directory!" : {
       "localizations" : {
@@ -867,19 +992,13 @@
       }
     },
     "GPT API Key" : {
-      "localizations" : {
 
-      }
     },
     "Key" : {
-      "localizations" : {
 
-      }
     },
     "Model" : {
-      "localizations" : {
 
-      }
     },
     "OK" : {
       "extractionState" : "manual",
@@ -1270,8 +1389,16 @@
       }
     },
     "OpenAI endpoint (Optional)" : {
-      "localizations" : {
 
+    },
+    "Please input search keywords" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "请输入搜索关键字"
+          }
+        }
       }
     },
     "Refresh" : {
@@ -1595,142 +1722,7 @@
       }
     },
     "XCStrings GPT translator" : {
-      "localizations" : {
 
-      }
-    },
-    "✓" : {
-      "localizations" : {
-
-      }
-    },
-    "🔴%@: %@, Please try again" : {
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "🔴%1$@: %2$@، يرجى المحاولة مرة أخرى"
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "🔴%1$@: %2$@, Bitte versuchen Sie es erneut"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "🔴%1$@: %2$@, Please try again"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "🔴%1$@: %2$@, Por favor, inténtalo de nuevo"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "🔴%1$@：%2$@, Veuillez réessayer"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "🔴%1$@: %2$@, Per favore riprova"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "🔴%1$@：%2$@、もう一度お試しください"
-          }
-        },
-        "pt-PT" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "🔴%1$@: %2$@, Por favor, tente novamente"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "🔴%1$@：%2$@，请重试"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "🔴%1$@：%2$@，請再試一次"
-          }
-        }
-      }
-    },
-    "🟡%@: Start" : {
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "🟡%@: ابدأ"
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "🟡%@: Start"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "🟡%@: Start"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "🟡%@: Comenzar"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "🟡%@: Démarrer"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "🟡%@: Inizio"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "🟡%@: スタート"
-          }
-        },
-        "pt-PT" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "🟡%@: Iniciar"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "🟡%@: 开始"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "🟡%@: 開始"
-          }
-        }
-      }
     }
   },
   "version" : "1.0"
