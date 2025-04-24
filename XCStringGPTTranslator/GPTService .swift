@@ -10,6 +10,7 @@ import Foundation
 import PathKit
 import SwiftUI
 import XcodeProj
+import Combine
 
 struct ProcessMessage {
     var message: LocalizedStringKey
@@ -32,7 +33,7 @@ class GPTService {
 
     var model: StringCatalog {
         didSet {
-            wirteJSONBack()
+            writeBackPublisher.send(1) // send any num
         }
     }
 
@@ -59,9 +60,12 @@ class GPTService {
 
     private(set) var langs: [String]
     private(set) var isRunning = false
-
+    
     @ObservationIgnored
-    private var writeDebouncer: Timer?
+    private lazy var writeBackPublisher = PassthroughSubject<Int, Error>()
+    
+    @ObservationIgnored
+    private lazy var disposeBag = Set<AnyCancellable>()
 
     @ObservationIgnored
     private var dataTask: URLSessionDataTask?
@@ -72,6 +76,16 @@ class GPTService {
         baseLang = ""
         base2Lang = ""
         langs = []
+        
+        writeBackPublisher
+            .debounce(for: 0.5, scheduler: RunLoop.main)
+            .sink { _ in
+            } receiveValue: { [weak self] _ in
+                guard let self else { return }
+                self.wirteJSONBack()
+            }
+            .store(in: &disposeBag)
+
         try reload()
     }
 
@@ -102,20 +116,18 @@ class GPTService {
     }
 
     func wirteJSONBack() {
-        writeDebouncer?.invalidate()
-        writeDebouncer = Timer.scheduledTimer(
-            withTimeInterval: 0.5, repeats: false,
-            block: { [weak self] _ in
-                guard let self else { return }
-                do {
-                    let encoder = JSONEncoder()
-                    encoder.outputFormatting = [.sortedKeys, .prettyPrinted, .withoutEscapingSlashes]
-                    let data = try encoder.encode(model)
-                    try data.write(to: target.xcstringURL)
-                } catch {
-                    print(error)
-                }
-            })
+        do {
+            let encoder = JSONEncoder()
+            encoder.outputFormatting = [
+                .sortedKeys,
+                .prettyPrinted,
+                .withoutEscapingSlashes
+            ]
+            let data = try encoder.encode(model)
+            try data.write(to: target.xcstringURL)
+        } catch {
+            print(error)
+        }
     }
 
     private func updateLangsList() {
