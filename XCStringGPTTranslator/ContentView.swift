@@ -156,13 +156,7 @@ struct ContentView: View {
                 selectGptServicesTarget = gptServices.first?.target
             }
         })
-        .toolbar {
-            ToolbarItem(placement: .primaryAction) {
-                TextField("Please input search keywords", text: $searchText)
-                    .textFieldStyle(.roundedBorder)
-                    .padding(20)
-            }
-        }
+        .searchable(text: $searchText, isPresented: Binding.constant(true), placement: SearchFieldPlacement.automatic, prompt: "Please input search keywords")
     }
 }
 
