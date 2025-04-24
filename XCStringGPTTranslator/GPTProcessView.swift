@@ -15,6 +15,11 @@ struct GPTProcessView: View {
     @State var deleteConfirm = false
     @Binding var searchText: String
     
+    @State private var addConfirm = false
+    @State private var key: String = ""
+    @State private var en: String = ""
+    @State private var zh: String = ""
+    
     private var allLocalizeKeys: [String] {
         guard !searchText.isEmpty else {
             let keys = gptService.model.strings.keys.sorted()
@@ -105,38 +110,6 @@ struct GPTProcessView: View {
             }
             .width(ideal: 200)
 
-            TableColumn("Comment") { key in
-                let keyLang = "\(key)-Comment"
-                let binding = Binding<String>(get: {
-                    gptService.model.strings[key]?.comment ?? ""
-                }, set: { newValue in
-                    gptService.model.strings[key]?.comment = newValue.nilIfEmpty
-                })
-
-                Text(gptService.model.strings[key]?.comment ?? "")
-                    .font(.system(size: 13))
-                    .lineLimit(3)
-                    // .underline(true)
-                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
-                    .background(Color.gray.opacity(0.001))
-                    .id(keyLang)
-                    .onTapGesture {
-                        editingKeyLang = keyLang
-                    }
-                    .sheet(isPresented:
-                        Binding<Bool> {
-                            editingKeyLang == keyLang
-                        } set: { show in
-                            if !show {
-                                editingKeyLang = nil
-                            }
-                        }
-                    ) {
-                        StringEditView(title: "Comment", key: key, comment: nil, text: binding)
-                    }
-            }
-            .width(ideal: 100)
-
             TableColumnForEach(gptService.langs) { lang in
                 TableColumn(lang) { key in
                     let keyLang = "\(lang)-\(key)"
@@ -176,6 +149,38 @@ struct GPTProcessView: View {
                 }
                 .width(ideal: 100)
             }
+            
+            TableColumn("Comment") { key in
+                let keyLang = "\(key)-Comment"
+                let binding = Binding<String>(get: {
+                    gptService.model.strings[key]?.comment ?? ""
+                }, set: { newValue in
+                    gptService.model.strings[key]?.comment = newValue.nilIfEmpty
+                })
+
+                Text(gptService.model.strings[key]?.comment ?? "")
+                    .font(.system(size: 13))
+                    .lineLimit(3)
+                    // .underline(true)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
+                    .background(Color.gray.opacity(0.001))
+                    .id(keyLang)
+                    .onTapGesture {
+                        editingKeyLang = keyLang
+                    }
+                    .sheet(isPresented:
+                        Binding<Bool> {
+                            editingKeyLang == keyLang
+                        } set: { show in
+                            if !show {
+                                editingKeyLang = nil
+                            }
+                        }
+                    ) {
+                        StringEditView(title: "Comment", key: key, comment: nil, text: binding)
+                    }
+            }
+            .width(ideal: 100)
         }
         .disabled(gptService.isRunning)
     }
@@ -233,6 +238,42 @@ struct GPTProcessView: View {
             }, message: {
                 Text(selecteRows.sorted().joined(separator: "\n"))
             })
+            
+            Button(action: {
+                addConfirm = true
+            }, label: {
+                if gptService.isRunning || !selecteRows.isEmpty {
+                    Image(systemName: "plus.app.fill")
+                } else {
+                    Image(systemName: "plus.app.fill")
+                        .foregroundStyle(Color.secondary)
+                }
+            })
+            .disabled(gptService.isRunning || !selecteRows.isEmpty)
+            .help("Add")
+            .sheet(isPresented: $addConfirm) {
+                VStack(alignment: .center, spacing: 10) {
+                    Text("Add new localized string")
+                    Group {
+                        TextField("Key", text: $key, axis: .vertical)
+                        TextField("English", text: $en)
+                        TextField("Chinese", text: $zh)
+                    }
+                    .textFieldStyle(.roundedBorder)
+                    .padding([.horizontal], 10)
+                    
+                    HStack(spacing: 20) {
+                        Button("Cancel") {
+                            addConfirm = false
+                        }
+                        
+                        Button("OK") {
+                            addConfirm = false
+                        }
+                    }
+                }
+                .padding(20)
+            }
 
             Button(action: {
                 try? gptService.reload()

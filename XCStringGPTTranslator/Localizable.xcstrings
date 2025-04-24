@@ -275,6 +275,12 @@
         }
       }
     },
+    "Add" : {
+
+    },
+    "Add new localized string" : {
+
+    },
     "API Key" : {
 
     },
@@ -602,6 +608,9 @@
           }
         }
       }
+    },
+    "Chinese" : {
+
     },
     "Clear" : {
       "extractionState" : "manual",
@@ -990,6 +999,9 @@
           }
         }
       }
+    },
+    "English" : {
+
     },
     "GPT API Key" : {
 
