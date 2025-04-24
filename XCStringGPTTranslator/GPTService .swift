@@ -33,7 +33,7 @@ class GPTService {
 
     var model: StringCatalog {
         didSet {
-            wrirteBackPublisher.send(1) // send any num
+            writeBackPublisher.send(1) // send any num
         }
     }
 
@@ -62,7 +62,7 @@ class GPTService {
     private(set) var isRunning = false
     
     @ObservationIgnored
-    private lazy var wrirteBackPublisher = PassthroughSubject<Int, Error>()
+    private lazy var writeBackPublisher = PassthroughSubject<Int, Error>()
     
     @ObservationIgnored
     private lazy var disposeBag = Set<AnyCancellable>()
@@ -77,7 +77,7 @@ class GPTService {
         base2Lang = ""
         langs = []
         
-        wrirteBackPublisher
+        writeBackPublisher
             .debounce(for: 0.5, scheduler: RunLoop.main)
             .sink { _ in
             } receiveValue: { [weak self] _ in
