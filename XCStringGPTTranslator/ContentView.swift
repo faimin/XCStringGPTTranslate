@@ -15,6 +15,7 @@ struct ContentView: View {
     @State private var rootDirectory: URL?
     @State private var noXcprojTip = false
     @State private var noXcstringsTip = false
+    @State private var searchText = ""
 
     var body: some View {
         ZStack {
@@ -94,7 +95,7 @@ struct ContentView: View {
                 }
             }
         }
-        if let xcproj, xcstrings.count > 0 {
+        if let xcproj, !xcstrings.isEmpty {
             let gptServices = xcstrings.compactMap { xcstringURL in
                 do {
                     return try GPTService(target: GPTServiceTarget(xcstringURL: xcstringURL, xcprojURL: xcproj))
@@ -103,7 +104,7 @@ struct ContentView: View {
                     return nil
                 }
             }
-            if gptServices.count > 0 {
+            if !gptServices.isEmpty {
                 self.gptServices = gptServices
                 return true
             }
@@ -145,7 +146,7 @@ struct ContentView: View {
                     .replacingOccurrences(of: rootDirectory?.absoluteString ?? "", with: "")
                     .replacingOccurrences(of: "file://", with: "")
 
-                GPTProcessView(gptService: service)
+                GPTProcessView(gptService: service, searchText: $searchText)
                     .id(service.target.hashValue)
                     .navigationTitle(title)
             }
@@ -155,6 +156,7 @@ struct ContentView: View {
                 selectGptServicesTarget = gptServices.first?.target
             }
         })
+        .searchable(text: $searchText, isPresented: Binding.constant(true), placement: SearchFieldPlacement.automatic, prompt: "Please input search keywords")
     }
 }
 

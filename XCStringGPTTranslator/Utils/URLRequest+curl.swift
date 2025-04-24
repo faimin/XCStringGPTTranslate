@@ -17,7 +17,7 @@ public extension URLRequest {
         var header = ""
         var data = ""
 
-        if let httpHeaders = allHTTPHeaderFields, httpHeaders.keys.count > 0 {
+        if let httpHeaders = allHTTPHeaderFields, !httpHeaders.isEmpty {
             for (key, value) in httpHeaders {
                 header += (pretty ? "--header " : "-H ") + "\'\(key): \(value)\' \(newLine)"
             }
