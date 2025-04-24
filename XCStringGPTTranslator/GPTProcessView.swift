@@ -16,17 +16,23 @@ struct GPTProcessView: View {
     @Binding var searchText: String
     
     private var allLocalizeKeys: [String] {
+        guard !searchText.isEmpty else {
+            let keys = gptService.model.strings.keys.sorted()
+            return keys
+        }
+        
+        let lowercasedSearchText = searchText.lowercased()
         let filteredStrings = gptService.model.strings.filter { item in
-            guard !searchText.isEmpty else {
+            guard !lowercasedSearchText.isEmpty else {
                 return true
             }
-            
-            if item.key.lowercased().contains(searchText) {
+     
+            if item.key.lowercased().contains(lowercasedSearchText) {
                 return true
             }
             for lang in gptService.langs {
                 guard let text = item.value.localizations[lang]?.stringUnit?.value else { continue }
-                guard text.lowercased().contains(searchText) else {
+                guard text.lowercased().contains(lowercasedSearchText) else {
                     continue
                 }
                 return true
