@@ -81,6 +81,10 @@ struct GPTProcessView: View {
                     key
                 }, set: { newValue in
                     guard newValue != key else { return }
+                    guard gptService.model.strings[newValue] == nil else {
+                        debugPrint("key already exists. => \(newValue)")
+                        return
+                    }
                     let valueModel = gptService.model.strings[key]
                     gptService.model.strings[key] = nil
                     gptService.model.strings[newValue] = valueModel
