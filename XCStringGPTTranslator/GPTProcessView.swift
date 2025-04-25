@@ -246,14 +246,14 @@ struct GPTProcessView: View {
             Button(action: {
                 addConfirm = true
             }, label: {
-                if gptService.isRunning || !selecteRows.isEmpty {
-                    Image(systemName: "plus.app.fill")
+                if gptService.isRunning {
+                    Image(systemName: "plus")
                 } else {
-                    Image(systemName: "plus.app.fill")
+                    Image(systemName: "plus")
                         .foregroundStyle(Color.secondary)
                 }
             })
-            .disabled(gptService.isRunning || !selecteRows.isEmpty)
+            .disabled(gptService.isRunning)
             .help("Add")
             .sheet(isPresented: $addConfirm) {
                 VStack(alignment: .center, spacing: 10) {
@@ -269,10 +269,25 @@ struct GPTProcessView: View {
                     HStack(spacing: 20) {
                         Button("Cancel") {
                             addConfirm = false
+                            clearAddData()
                         }
                         
                         Button("OK") {
+                            defer {
+                                clearAddData()
+                            }
                             addConfirm = false
+                            
+                            guard !key.isEmpty, gptService.model.strings[key] == nil else { return }
+                            
+                            gptService.model.strings[key] = StringEntry(
+                                comment: nil,
+                                extractionState: .manual,
+                                localizations: [
+                                    "zh-Hans": StringLocalization(stringUnit: StringUnit(state: .translated, value: zh)),
+                                    "en": StringLocalization(stringUnit: StringUnit(state: .translated, value: en))
+                                ]
+                            )
                         }
                     }
                 }
@@ -314,6 +329,14 @@ struct GPTProcessView: View {
         }
         .padding(.horizontal, 20)
         .padding(.vertical, 10)
+    }
+}
+
+private extension GPTProcessView {
+    func clearAddData() {
+        key = ""
+        en = ""
+        zh = ""
     }
 }
 
