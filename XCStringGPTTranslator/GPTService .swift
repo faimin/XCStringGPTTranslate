@@ -95,20 +95,19 @@ class GPTService {
             from: Data(
                 contentsOf:
                     target.xcstringURL))
-        var langs: [String] = []
+        var langSet: Set<String> = Set()
         model.strings.forEach { _, val in
-            let _langs = val.localizations.map(\.key)
-            if langs.count < _langs.count {
-                langs = _langs
+            val.localizations.forEach { dict in
+                langSet.insert(dict.key)
             }
         }
 
         let xcodeproj = try XcodeProj(path: Path(target.xcprojURL.path()))
-        langs = Set(langs).union(xcodeproj.pbxproj.rootObject?.knownRegions ?? []).sorted()
-        langs.removeAll(where: { $0 == "Base" })
+        langSet = langSet.union(xcodeproj.pbxproj.rootObject?.knownRegions ?? [])
+        langSet.remove("Base")
 
         self.model = model
-        self.langs = langs.sorted()
+        self.langs = langSet.sorted()
         baseLang = baseLang.isEmpty ? model.sourceLanguage : baseLang
         updateLangsList()
         processMessages = []
