@@ -33,7 +33,7 @@ class GPTService {
 
     var model: StringCatalog {
         didSet {
-            writeBackPublisher.send(1) // send any num
+            writeBackPublisher.send()
         }
     }
 
@@ -62,7 +62,7 @@ class GPTService {
     private(set) var isRunning = false
     
     @ObservationIgnored
-    private lazy var writeBackPublisher = PassthroughSubject<Int, Error>()
+    private lazy var writeBackPublisher = PassthroughSubject<Void, Never>()
     
     @ObservationIgnored
     private lazy var disposeBag = Set<AnyCancellable>()
