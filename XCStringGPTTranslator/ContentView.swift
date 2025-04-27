@@ -15,7 +15,7 @@ struct ContentView: View {
     @State private var rootDirectory: URL?
     @State private var noXcprojTip = false
     @State private var noXcstringsTip = false
-    @State private var searchText = ""
+    @StateObject private var viewModel = SearchViewModel()
 
     var body: some View {
         ZStack {
@@ -146,7 +146,7 @@ struct ContentView: View {
                     .replacingOccurrences(of: rootDirectory?.absoluteString ?? "", with: "")
                     .replacingOccurrences(of: "file://", with: "")
 
-                GPTProcessView(gptService: service, searchText: $searchText)
+                GPTProcessView(gptService: service, searchText: $viewModel.debounceSearchText)
                     .id(service.target.hashValue)
                     .navigationTitle(title)
             }
@@ -156,7 +156,7 @@ struct ContentView: View {
                 selectGptServicesTarget = gptServices.first?.target
             }
         })
-        .searchable(text: $searchText, isPresented: Binding.constant(true), placement: SearchFieldPlacement.automatic, prompt: "Please input search keywords")
+        .searchable(text: $viewModel.searchText, isPresented: Binding.constant(true), placement: SearchFieldPlacement.automatic, prompt: "Please input search keywords")
     }
 }
 
