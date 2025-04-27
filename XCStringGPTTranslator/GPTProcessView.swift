@@ -345,6 +345,8 @@ private extension GPTProcessView {
         key = ""
         en = ""
         zh = ""
+        tr = ""
+        ar = ""
     }
 }
 
