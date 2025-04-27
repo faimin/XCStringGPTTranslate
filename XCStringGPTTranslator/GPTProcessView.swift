@@ -18,7 +18,9 @@ struct GPTProcessView: View {
     @State private var addConfirm = false
     @State private var key: String = ""
     @State private var en: String = ""
-    @State private var zh: String = ""
+    @State private var zh: String = ""  // 中文
+    @State private var tr: String = ""  // 土耳其
+    @State private var ar: String = ""  // 阿拉伯
     
     private var allLocalizeKeys: [String] {
         guard !searchText.isEmpty else {
@@ -108,7 +110,9 @@ struct GPTProcessView: View {
                         if !show {
                             editingKeyLang = nil
                         }
-                    })) {
+                    }), onDismiss: {
+                        editingKeyLang = nil
+                    }) {
                         StringEditView(title: "Key", key: key, comment: nil, text: binding)
                     }
             }
@@ -262,6 +266,8 @@ struct GPTProcessView: View {
                         TextField("Key", text: $key, axis: .vertical)
                         TextField("English", text: $en)
                         TextField("Chinese", text: $zh)
+                        TextField("Tuikish", text: $tr)
+                        TextField("Arabic", text: $ar)
                     }
                     .textFieldStyle(.roundedBorder)
                     .padding([.horizontal], 10)
@@ -285,7 +291,9 @@ struct GPTProcessView: View {
                                 extractionState: .manual,
                                 localizations: [
                                     "zh-Hans": StringLocalization(stringUnit: StringUnit(state: .translated, value: zh)),
-                                    "en": StringLocalization(stringUnit: StringUnit(state: .translated, value: en))
+                                    "en": StringLocalization(stringUnit: StringUnit(state: .translated, value: en)),
+                                    "tr": StringLocalization(stringUnit: StringUnit(state: .translated, value: tr)),
+                                    "ar": StringLocalization(stringUnit: StringUnit(state: .translated, value: ar))
                                 ]
                             )
                         }

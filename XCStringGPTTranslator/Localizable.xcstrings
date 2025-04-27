@@ -284,6 +284,9 @@
     "API Key" : {
 
     },
+    "Arabic" : {
+
+    },
     "Base" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -1732,6 +1735,9 @@
           }
         }
       }
+    },
+    "Tuikish" : {
+
     },
     "XCStrings GPT translator" : {
 
