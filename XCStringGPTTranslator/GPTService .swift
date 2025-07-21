@@ -89,7 +89,7 @@ class GPTService {
             }
         }
 
-        let xcodeproj = try XcodeProj(path: Path(target.xcprojURL.path()))
+        let xcodeproj = try XcodeProj(path: Path(target.xcprojURL.path(percentEncoded: false)))
         langs = Set(langs).union(xcodeproj.pbxproj.rootObject?.knownRegions ?? []).sorted()
         langs.removeAll(where: { $0 == "Base" })
 

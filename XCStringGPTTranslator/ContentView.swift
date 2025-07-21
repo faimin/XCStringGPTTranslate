@@ -121,9 +121,8 @@ struct ContentView: View {
         NavigationSplitView {
             VStack(alignment: .leading) {
                 List(gptServices.map(\.target), selection: $selectGptServicesTarget) { target in
-                    let title = target.xcstringURL.absoluteString
-                        .replacingOccurrences(of: rootDirectory?.absoluteString ?? "", with: "")
-                        .replacingOccurrences(of: "file://", with: "")
+                    let title = target.xcstringURL.path(percentEncoded: false)
+                        .replacingOccurrences(of: rootDirectory?.path(percentEncoded: false) ?? "", with: "")
                     NavigationLink(value: target) {
                         Text(title)
                             .lineLimit(0)
@@ -141,9 +140,8 @@ struct ContentView: View {
 
         } detail: {
             if let selectGptServicesTarget, let service = gptServices.first(where: { $0.target == selectGptServicesTarget }) {
-                let title = selectGptServicesTarget.xcstringURL.absoluteString
-                    .replacingOccurrences(of: rootDirectory?.absoluteString ?? "", with: "")
-                    .replacingOccurrences(of: "file://", with: "")
+                let title = selectGptServicesTarget.xcstringURL.path(percentEncoded: false)
+                    .replacingOccurrences(of: rootDirectory?.path(percentEncoded: false) ?? "", with: "")
 
                 GPTProcessView(gptService: service)
                     .id(service.target.hashValue)
