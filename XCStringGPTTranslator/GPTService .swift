@@ -324,7 +324,7 @@ extension GPTService {
     @MainActor
     fileprivate func request(_ key: String) async throws {
         let setting = SettingService.shared
-        if setting.gptAPIKey.isEmpty {
+        if setting.apiProvider == .openAI && setting.gptAPIKey.isEmpty {
             throw "empty GPT API Key, config it in Settings."
         }
 
@@ -334,14 +334,20 @@ extension GPTService {
         body["max_tokens"] = 16383
         body["top_p"] = 1
 
-        var server = setting.gptServer.nilIfEmpty ?? "https://api.openai.com"
-        if !server.hasPrefix("http") {
-            server = "https://\(server)"
+        var base = setting.apiProvider == .lmStudio
+            ? setting.lmStudioURL
+            : (setting.gptServer.nilIfEmpty ?? "https://api.openai.com")
+
+        if !base.hasPrefix("http") {
+            base = setting.apiProvider == .lmStudio
+                ? "http://\(base)"
+                : "https://\(base)"
         }
-        if server.hasSuffix("/") {
-            server.removeLast()
+
+        if base.hasSuffix("/") {
+            base.removeLast()
         }
-        let urlStr = server + "/v1/chat/completions"
+        let urlStr = base + "/v1/chat/completions"
         guard let url = URL(string: urlStr) else {
             throw "error url: \(urlStr)"
         }
