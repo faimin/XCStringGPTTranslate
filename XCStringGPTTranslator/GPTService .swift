@@ -1,16 +1,16 @@
 //
-//  GPTService.swift
+//  GPTService .swift
 //  GPTxcstringTranslate
 //
 //  Created by winddpan on 2024/2/26.
 //
 
+import Combine
 import EventSource
 import Foundation
 import PathKit
 import SwiftUI
 import XcodeProj
-import Combine
 
 struct ProcessMessage {
     var message: LocalizedStringKey
@@ -60,10 +60,10 @@ class GPTService {
 
     private(set) var langs: [String]
     private(set) var isRunning = false
-    
+
     @ObservationIgnored
     private lazy var writeBackPublisher = PassthroughSubject<Void, Never>()
-    
+
     @ObservationIgnored
     private lazy var disposeBag = Set<AnyCancellable>()
 
@@ -76,7 +76,7 @@ class GPTService {
         baseLang = ""
         base2Lang = ""
         langs = []
-        
+
         writeBackPublisher
             .debounce(for: 0.5, scheduler: RunLoop.main)
             .sink { _ in
@@ -94,20 +94,21 @@ class GPTService {
             StringCatalog.self,
             from: Data(
                 contentsOf:
-                    target.xcstringURL))
+                target.xcstringURL)
+        )
         var langSet: Set<String> = Set()
-        model.strings.forEach { _, val in
-            val.localizations.forEach { dict in
+        for (_, val) in model.strings {
+            for dict in val.localizations {
                 langSet.insert(dict.key)
             }
         }
 
-        let xcodeproj = try XcodeProj(path: Path(target.xcprojURL.path()))
-        langSet = langSet.union(xcodeproj.pbxproj.rootObject?.knownRegions ?? [])
-        langSet.remove("Base")
+        let xcodeproj = try XcodeProj(path: Path(target.xcprojURL.path(percentEncoded: false)))
+        langs = Set(langs).union(xcodeproj.pbxproj.rootObject?.knownRegions ?? []).sorted()
+        langs.removeAll(where: { $0 == "Base" })
 
         self.model = model
-        self.langs = langSet.sorted()
+        langs = langSet.sorted()
         baseLang = baseLang.isEmpty ? model.sourceLanguage : baseLang
         updateLangsList()
         processMessages = []
@@ -120,7 +121,7 @@ class GPTService {
             encoder.outputFormatting = [
                 .sortedKeys,
                 .prettyPrinted,
-                .withoutEscapingSlashes
+                .withoutEscapingSlashes,
             ]
             let data = try encoder.encode(model)
             try data.write(to: target.xcstringURL)
@@ -131,14 +132,14 @@ class GPTService {
 
     private func updateLangsList() {
         var langs = langs
-        for i in 0..<langs.count {
+        for i in 0 ..< langs.count {
             if langs[i] == base2Lang {
                 langs.remove(at: i)
                 langs.insert(base2Lang, at: 0)
                 break
             }
         }
-        for i in 0..<langs.count {
+        for i in 0 ..< langs.count {
             if langs[i] == baseLang {
                 langs.remove(at: i)
                 langs.insert(baseLang, at: 0)
@@ -170,7 +171,8 @@ class GPTService {
             if (failureCount + successCount) > 1 {
                 processMessage = .init(
                     message: "\(failureCount == 0 ? "🟢" : "🔴")Succeessed: \(successCount)  Failure: \(failureCount)",
-                    success: failureCount == 0)
+                    success: failureCount == 0
+                )
             }
             isRunning = false
         }
@@ -195,7 +197,7 @@ class GPTService {
     }
 }
 
-extension GPTService {
+private extension GPTService {
     private func getLangText(_ lang: String, key: String) -> String? {
         guard let locStr = model.strings[key] else {
             return nil
@@ -204,7 +206,7 @@ extension GPTService {
         if lang == "Comment" {
             str = locStr.comment
         } else if let text = locStr.localizations[lang],
-            text.stringUnit?.value.nilIfEmpty != nil
+                  text.stringUnit?.value.nilIfEmpty != nil
         {
             str = text.stringUnit!.value
         } else if lang == model.sourceLanguage {
@@ -215,7 +217,7 @@ extension GPTService {
         return str
     }
 
-    fileprivate func generateRequestBody(_ key: String) throws -> [String: Any] {
+    func generateRequestBody(_ key: String) throws -> [String: Any] {
         guard let locStr = model.strings[key] else {
             throw "unexpected error key: \"\(key)\""
         }
@@ -227,7 +229,7 @@ extension GPTService {
         }
 
         var toLangs: [String] = []
-        langs.forEach { lang in
+        for lang in langs {
             if locStr.localizations[lang]?.stringUnit?.value.nilIfEmpty == nil {
                 toLangs.append(lang)
             }
@@ -236,39 +238,39 @@ extension GPTService {
             throw "no language needs to be translated!"
         }
         var toLangsSchema: [String: Any] = [:]
-        toLangs.forEach { lang in
+        for lang in toLangs {
             toLangsSchema[lang] = ["type": "string", "description": "translate to '\(lang)'."]
         }
 
         let prompt = """
-            Translate app content into multiple languages. Maintain the original meaning while considering context and ensuring clarity and fluency in the target languages.
+        Translate app content into multiple languages. Maintain the original meaning while considering context and ensuring clarity and fluency in the target languages.
 
-            # Steps
-            1. Understand the context of the content to be translated, including any specific jargon or technical terms.
-            2. Translate the text ensuring the meaning is preserved.
-            3. Review the translation for grammatical correctness and natural flow in each target language.
-            4. Verify that any culturally sensitive material is appropriately addressed.
+        # Steps
+        1. Understand the context of the content to be translated, including any specific jargon or technical terms.
+        2. Translate the text ensuring the meaning is preserved.
+        3. Review the translation for grammatical correctness and natural flow in each target language.
+        4. Verify that any culturally sensitive material is appropriately addressed.
 
-            # Output Format
+        # Output Format
 
-            Provide the translated versions as plain text output.
+        Provide the translated versions as plain text output.
 
-            # Examples
+        # Examples
 
-            - **Input:**"Hello, welcome to our app!"
-              - **Output (Chinese):** 你好，欢迎使用我们的应用程序！
-              - **Output (French):** Bonjour, bienvenue dans notre application!
+        - **Input:**"Hello, welcome to our app!"
+          - **Output (Chinese):** 你好，欢迎使用我们的应用程序！
+          - **Output (French):** Bonjour, bienvenue dans notre application!
 
-            - **Input:**"Settings"
-              - **Output (Spanish):** Configuración 
-              - **Output (German):** Einstellungen 
+        - **Input:**"Settings"
+          - **Output (Spanish):** Configuración 
+          - **Output (German):** Einstellungen 
 
-            # Notes
+        # Notes
 
-            - Pay attention to context-specific terminology.
-            - If unsure, prioritize clarity and readability over a literal translation.
-            - Maintain consistency in repeated terms or phrases.
-            """
+        - Pay attention to context-specific terminology.
+        - If unsure, prioritize clarity and readability over a literal translation.
+        - Maintain consistency in repeated terms or phrases.
+        """
 
         var userContent = ""
         if let baseText = baseText?.nilIfEmpty {
@@ -296,15 +298,15 @@ extension GPTService {
         return body
     }
 
-    fileprivate func handleGPTResponse(data: Data, for key: String) throws {
+    func handleGPTResponse(data: Data, for key: String) throws {
         let root = try JSONSerialization.jsonObject(with: data) as? [String: Any]
         guard let root,
-            let choices = root["choices"] as? [[String: Any]],
-            let message = choices.first?["message"] as? [String: Any],
-            let content = message["content"] as? String,
-            var dict = try? JSONSerialization.jsonObject(with: Data.init(content.utf8)) as? [String: String]
+              let choices = root["choices"] as? [[String: Any]],
+              let message = choices.first?["message"] as? [String: Any],
+              let content = message["content"] as? String,
+              var dict = try? JSONSerialization.jsonObject(with: Data(content.utf8)) as? [String: String]
         else {
-            throw "ParseError: \(String.init(data: data, encoding: .utf8) ?? "") "
+            throw "ParseError: \(String(data: data, encoding: .utf8) ?? "") "
         }
 
         if dict[baseLang]?.nilIfEmpty == nil, baseLang == model.sourceLanguage {
@@ -333,9 +335,9 @@ extension GPTService {
     }
 
     @MainActor
-    fileprivate func request(_ key: String) async throws {
+    func request(_ key: String) async throws {
         let setting = SettingService.shared
-        if setting.gptAPIKey.isEmpty {
+        if setting.apiProvider == .openAI, setting.gptAPIKey.isEmpty {
             throw "empty GPT API Key, config it in Settings."
         }
 
@@ -345,14 +347,20 @@ extension GPTService {
         body["max_tokens"] = 16383
         body["top_p"] = 1
 
-        var server = setting.gptServer.nilIfEmpty ?? "https://api.openai.com"
-        if !server.hasPrefix("http") {
-            server = "https://\(server)"
+        var base = setting.apiProvider == .lmStudio
+            ? setting.lmStudioURL
+            : (setting.gptServer.nilIfEmpty ?? "https://api.openai.com")
+
+        if !base.hasPrefix("http") {
+            base = setting.apiProvider == .lmStudio
+                ? "http://\(base)"
+                : "https://\(base)"
         }
-        if server.hasSuffix("/") {
-            server.removeLast()
+
+        if base.hasSuffix("/") {
+            base.removeLast()
         }
-        let urlStr = server + "/v1/chat/completions"
+        let urlStr = base + "/v1/chat/completions"
         guard let url = URL(string: urlStr) else {
             throw "error url: \(urlStr)"
         }
