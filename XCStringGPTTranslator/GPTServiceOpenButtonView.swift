@@ -29,7 +29,7 @@ struct GPTServiceOpenButtonView: View {
                     }
                 }
                 if let projURL {
-                    Text(projURL.path())
+                    Text(projURL.path(percentEncoded: false))
                 }
             }
 
@@ -44,7 +44,7 @@ struct GPTServiceOpenButtonView: View {
                     }
                 }
                 if let xcstringsURL {
-                    Text(xcstringsURL.path())
+                    Text(xcstringsURL.path(percentEncoded: false))
                 }
             }
         }
