@@ -1,5 +1,5 @@
 //
-//  GPTService .swift
+//  GPTService.swift
 //  GPTxcstringTranslate
 //
 //  Created by winddpan on 2024/2/26.
@@ -98,8 +98,8 @@ class GPTService {
         )
         var langSet: Set<String> = Set()
         for (_, val) in model.strings {
-            for dict in val.localizations {
-                langSet.insert(dict.key)
+            for (key, _) in val.localizations {
+                langSet.insert(key)
             }
         }
 
@@ -229,7 +229,7 @@ private extension GPTService {
         }
 
         var toLangs: [String] = []
-        for lang in langs {
+        langs.forEach { lang in
             if locStr.localizations[lang]?.stringUnit?.value.nilIfEmpty == nil {
                 toLangs.append(lang)
             }
@@ -238,7 +238,7 @@ private extension GPTService {
             throw "no language needs to be translated!"
         }
         var toLangsSchema: [String: Any] = [:]
-        for lang in toLangs {
+        toLangs.forEach { lang in
             toLangsSchema[lang] = ["type": "string", "description": "translate to '\(lang)'."]
         }
 
