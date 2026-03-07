@@ -15,7 +15,7 @@
 		E416EB162B8CC34E006D7073 /* SettingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E416EB152B8CC34E006D7073 /* SettingService.swift */; };
 		E416EB192B8CC470006D7073 /* ObservableUserDefault in Frameworks */ = {isa = PBXBuildFile; productRef = E416EB182B8CC470006D7073 /* ObservableUserDefault */; };
 		E416EB1B2B8CC470006D7073 /* ObservableUserDefaultClient in Frameworks */ = {isa = PBXBuildFile; productRef = E416EB1A2B8CC470006D7073 /* ObservableUserDefaultClient */; };
-		E416EB1D2B8CC51C006D7073 /* GPTService .swift in Sources */ = {isa = PBXBuildFile; fileRef = E416EB1C2B8CC51C006D7073 /* GPTService .swift */; };
+		E416EB1D2B8CC51C006D7073 /* GPTService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E416EB1C2B8CC51C006D7073 /* GPTService.swift */; };
 		E416EB1F2B8CC76E006D7073 /* GPTProcessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E416EB1E2B8CC76E006D7073 /* GPTProcessView.swift */; };
 		E416EB2B2B8CDF7F006D7073 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E416EB2A2B8CDF7F006D7073 /* SettingView.swift */; };
 		E416EB2F2B8CE659006D7073 /* CodableWrapper in Frameworks */ = {isa = PBXBuildFile; productRef = E416EB2E2B8CE659006D7073 /* CodableWrapper */; };
@@ -54,7 +54,7 @@
 		E416EB0D2B8CC2F3006D7073 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E416EB0F2B8CC2F3006D7073 /* XCStringGPTTranslator.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = XCStringGPTTranslator.entitlements; sourceTree = "<group>"; };
 		E416EB152B8CC34E006D7073 /* SettingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingService.swift; sourceTree = "<group>"; };
-		E416EB1C2B8CC51C006D7073 /* GPTService .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GPTService .swift"; sourceTree = "<group>"; };
+		E416EB1C2B8CC51C006D7073 /* GPTService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPTService.swift; sourceTree = "<group>"; };
 		E416EB1E2B8CC76E006D7073 /* GPTProcessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPTProcessView.swift; sourceTree = "<group>"; };
 		E416EB2A2B8CDF7F006D7073 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		E416EB2C2B8CE1AC006D7073 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -125,7 +125,7 @@
 				C2B49EB22DBDE58A0056BBCA /* SearchViewModel.swift */,
 				E416EB1E2B8CC76E006D7073 /* GPTProcessView.swift */,
 				E416EB152B8CC34E006D7073 /* SettingService.swift */,
-				E416EB1C2B8CC51C006D7073 /* GPTService .swift */,
+				E416EB1C2B8CC51C006D7073 /* GPTService.swift */,
 				E416EB2A2B8CDF7F006D7073 /* SettingView.swift */,
 				E416EB302B8CEC4A006D7073 /* StringEditView.swift */,
 				F7D6C1D42B8DDE710094DB9D /* GPTServiceOpenButtonView.swift */,
@@ -293,7 +293,7 @@
 				F7D4984A2BBAA7CC00D93551 /* StringExtractionState.swift in Sources */,
 				F7D4984D2BBAA7CC00D93551 /* StringSubstitution.swift in Sources */,
 				E416EB072B8CC2F0006D7073 /* GPTxcstringTranslateApp.swift in Sources */,
-				E416EB1D2B8CC51C006D7073 /* GPTService .swift in Sources */,
+				E416EB1D2B8CC51C006D7073 /* GPTService.swift in Sources */,
 				E46518B12D05D58A00C2F70C /* String+escaping.swift in Sources */,
 				F7D4984F2BBAA7CC00D93551 /* StringUnitState.swift in Sources */,
 				F7D4984B2BBAA7CC00D93551 /* StringLanguage.swift in Sources */,
